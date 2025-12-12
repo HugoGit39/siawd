@@ -360,31 +360,47 @@ mod_sub_data__server <- function(id) {
       df <- build_form()
       last_submission(df)
 
-      excel_path <- file.path(tempdir(),   paste0(
-        "sia_data_submission_",
-        input$email, "_",
-        format(Sys.Date(), "%Y%m%d"),
-        ".xlsx"
-      ))
+      # 1) still create a temp Excel file (for the download handler)
+      excel_path <- file.path(
+        tempdir(),
+        paste0("sia_data_submission_", input$email, "_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
+      )
       write_xlsx(list("Submission" = df), path = excel_path)
 
+      # 2) trigger the browser download of the Excel
       session$onFlushed(function() {
         runjs(sprintf("document.getElementById('%s').click();", ns("dl_xlsx_submit")))
       }, once = TRUE)
 
-      session$sendCustomMessage("dataSubmitted", "Thank you for your data submission! We will get back to you soon.")
-      reset_inputs_sub_data(session, input)
+      # 3) open the user's default mail client with mailto:
+      to_address <- "disc@stress-in-action.nl"
+      subject <- sprintf("SiA Wearables Data Submission – %s", input$email)
 
-      subject <- sprintf("SiA Wearables submission: %s", input$email)
       body <- paste0(
-        "New submission received.\n\n",
+        "Dear Stress-in-Action Team,\n\n",
+        "Please find attached my data submission file (downloaded automatically from the app).\n\n",
         "Name: ", input$name, "\n",
         "Email: ", input$email, "\n",
         "Telephone: ", input$telephone, "\n",
-        "Institution: ", input$institution, "\n"
+        "Institution: ", input$institution, "\n",
+        "\nThank you!\n\n",
+        "Best regards,\n", input$name
       )
 
-      send_email(body = body, subject = subject, attachment = excel_path)
+      mailto_url <- paste0(
+        "mailto:", to_address,
+        "?subject=", URLencode(subject, reserved = TRUE),
+        "&body=", URLencode(body, reserved = TRUE)
+      )
+
+      runjs(sprintf("window.location.href = '%s';", mailto_url))
+
+      showNotification(
+        "Opening your email client. Please attach the downloaded Excel file before sending.",
+        type = "message"
+      )
+
+      reset_inputs_sub_data(session, input)
     })
   })
 }

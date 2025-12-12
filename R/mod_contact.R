@@ -61,32 +61,40 @@ mod_contact_server <- function(id) {
       }
     })
 
-      observe({
+    # Enable/disable button
+    observe({
+      toggleState(id = "submit_email", condition = mandatoryfields_check(fieldsMandatory_email, input))
+    })
 
-        toggleState(id = "submit_email", condition = mandatoryfields_check(fieldsMandatory_email, input))
-
-      })
-
-    # Call `send_email()` when Submit button is clicked
+    # When Submit button is clicked
     observeEvent(input$submit_email, {
-
-      # Create email body
-      body <- paste("Name: ", input$name,
-                    "\nEmail: ", input$email,
-                    "\nTelephone: ", input$telephone,
-                    "\n\nInstitution: ", input$institution,
-                    "\nMessage: ", input$message)
-
+      # Prepare message components
+      to_address <- "disc@stress-in-action.nl"  # replace with your public contact email
       subject <- "Wearable Database App message"
 
-      send_email(body, subject)
+      body <- paste(
+        "Name:", input$name,
+        "\nEmail:", input$email,
+        "\nTelephone:", input$telephone,
+        "\nInstitution:", input$institution,
+        "\n\nMessage:\n", input$message
+      )
 
-      # Trigger JS alert from server
-      session$sendCustomMessage("emailSubmitted", "Thank you for your message! We will get back to you soon.")
+      # Encode components for mailto URL
+      mailto_url <- paste0(
+        "mailto:", to_address,
+        "?subject=", URLencode(subject, reserved = TRUE),
+        "&body=", URLencode(body, reserved = TRUE)
+      )
 
-      # Reset all fields in one go
+      # Open default mail client
+      runjs(sprintf("window.location.href = '%s';", mailto_url))
+
+      # Optional: small confirmation message
+      showNotification("Opening your email client…", type = "message")
+
+      # Reset fields
       reset_inputs_contact(session)
     })
   })
 }
-
