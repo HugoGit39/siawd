@@ -1,13 +1,13 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-<table align="center">
+<table align="center" style="border: none; background-color: transparent;">
   <tr>
-    <td valign="middle">
+    <td valign="middle" style="border: none; background-color: transparent;">
       <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png" 
            alt="SIA Hex Sticker" 
            width="200">
     </td>
-    <td valign="middle">
+    <td valign="middle" style="border: none; background-color: transparent;">
       <img src="https://stress-in-action.nl/wp-content/uploads/2023/04/sia-logo.png" 
            alt="SIA Logo" 
            width="200">
