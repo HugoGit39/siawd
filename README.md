@@ -1,10 +1,15 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png" alt="SIA Hex Sticker" width="200">
-  <img src="https://stress-in-action.nl/wp-content/uploads/2023/04/sia-logo.png" alt="SIA Logo" width="200">
+  <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png" 
+       alt="SIA Hex Sticker" 
+       width="200" 
+       style="vertical-align: middle; margin-right: 20px;">
+  <img src="https://stress-in-action.nl/wp-content/uploads/2023/04/sia-logo.png" 
+       alt="SIA Logo" 
+       width="200" 
+       style="vertical-align: middle;">
 </p>
-
 
 ## About
 
