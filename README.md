@@ -1,12 +1,5 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-<!-- Hex sticker centered below header -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png"
-       alt="SIA Hex Sticker"
-       width="180">
-</p>
-
 ## About
 
 <img align="right"
@@ -15,29 +8,11 @@
      alt="SIA Hex Sticker">
 
 <p align="justify">
-Stress in Action capitalizes on the fast advances in technology and big data analytics
-to move stress research from the lab to daily life. The Consortium enables synergistic
-collaborations to discover 1) how responses to daily life stress arise from the temporal,
-dynamic interplay between context and person-specific factors, 2) how daily life stress
-can be reliably measured in a specific individual in real-time, and 3) how and when
-potential beneficial stress-response mechanisms turn into detrimental effects on mental
-and cardiometabolic health. This enables the development of novel monitoring and
-intervention strategies to track and reduce daily life stress and its health impact.
-</p>
-
-
-## About
-
-<p align="justify">
-  Stress in Action capitalizes on the fast advances in technology and big data analytics to move stress research from the lab to daily life. The Consortium enables synergistic collaborations to discover 1) how responses to daily life stress arise from the temporal, dynamic interplay between context and person-specific factors, 2) how daily life stress can be reliably measured in a specific individual in real-time, and 3) how and when potential beneficial stress-response mechanisms turn into detrimental effects on mental and cardiometabolic health. This enables the development of novel monitoring and intervention strategies to track and reduce daily life stress and its health impact.
-</p>
-
-<p align="center">
-  <img src="https://stress-in-action.nl/wp-content/uploads/2023/05/Measurements_3.jpg" alt="Measurements Image" width="50%">
+  The Stress in Action Wearables Database (SiA-WD) is a new, comprehensive, well-sustained database of physiological wearable devices that have application potential in behavioral research, in particular stress research. It provides a large amount of information that a researcher would look for such as the general device information, recorded signals, technical specifications and data access, combined with a systematic validity, reliability and usability review of the available literature on a device.
 </p>
 
 <p align="justify">
-  For research theme (RT) 2:  how daily life stress can be reliably measured in a specific individual in real-time using daily life stress assessment tools, selection and validation pipelines in our design field labs will establish their ethical and legal feasibility, user-acceptance, reliability and validity, and potential application in just-in-time adaptive stress interventions.
+  The SiA-WD will be iteratively expanded and the information, including that for devices already existing in the database, updated for a period of at least ten years. The user-friendly tool enables researchers to conveniently select the most suitable wearable for their study.
 </p>
 
 ## How to use the SiA Wearable Database Shiny App
