@@ -1,40 +1,36 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-<!-- Header -->
-<table width="100%">
-  <tr>
-    <td align="left" valign="middle">
-      <h1>SiA Wearable Database Shiny App</h1>
-
-      <p>
-        <a href="https://www.repostatus.org/#active">
-          <img src="https://www.repostatus.org/badges/latest/active.svg"
-               alt="Project Status: Active">
-        </a>
-      </p>
-
-      <p>
-        An interactive database and comparison tool for non-invasive wearable
-        devices, focusing on stress measurement, validation, and usability.
-      </p>
-    </td>
-
-    <td align="right" valign="top">
-      <img src="https://stress-in-action.nl/wp-content/uploads/2023/04/sia-logo.png"
-           alt="Stress in Action Logo"
-           width="160">
-    </td>
-  </tr>
-</table>
-
-<br>
-
 <!-- Hex sticker centered below header -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png"
        alt="SIA Hex Sticker"
        width="180">
 </p>
+
+## About
+
+<table width="100%">
+  <tr>
+    <td valign="top" align="justify">
+      <p>
+        Stress in Action capitalizes on the fast advances in technology and big data analytics
+        to move stress research from the lab to daily life. The Consortium enables synergistic
+        collaborations to discover 1) how responses to daily life stress arise from the temporal,
+        dynamic interplay between context and person-specific factors, 2) how daily life stress
+        can be reliably measured in a specific individual in real-time, and 3) how and when
+        potential beneficial stress-response mechanisms turn into detrimental effects on mental
+        and cardiometabolic health. This enables the development of novel monitoring and
+        intervention strategies to track and reduce daily life stress and its health impact.
+      </p>
+    </td>
+
+    <td width="180" valign="top" align="right">
+      <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png"
+           alt="SIA Hex Sticker"
+           width="160">
+    </td>
+  </tr>
+</table>
 
 
 ## About
