@@ -1,19 +1,41 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-<table align="center">
+<!-- Header -->
+<table width="100%">
   <tr>
-    <td valign="middle">
-      <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png" 
-           alt="SIA Hex Sticker" 
-           width="200">
+    <td align="left" valign="middle">
+      <h1>SiA Wearable Database Shiny App</h1>
+
+      <p>
+        <a href="https://www.repostatus.org/#active">
+          <img src="https://www.repostatus.org/badges/latest/active.svg"
+               alt="Project Status: Active">
+        </a>
+      </p>
+
+      <p>
+        An interactive database and comparison tool for non-invasive wearable
+        devices, focusing on stress measurement, validation, and usability.
+      </p>
     </td>
-    <td valign="middle">
-      <img src="https://stress-in-action.nl/wp-content/uploads/2023/04/sia-logo.png" 
-           alt="SIA Logo" 
-           width="200">
+
+    <td align="right" valign="top">
+      <img src="https://stress-in-action.nl/wp-content/uploads/2023/04/sia-logo.png"
+           alt="Stress in Action Logo"
+           width="160">
     </td>
   </tr>
 </table>
+
+<br>
+
+<!-- Hex sticker centered below header -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png"
+       alt="SIA Hex Sticker"
+       width="180">
+</p>
+
 
 ## About
 
