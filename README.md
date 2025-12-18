@@ -4,7 +4,7 @@
 
 <img align="right"
      src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png"
-     width="160"
+     width="200"
      alt="SIA Hex Sticker">
 
 <p align="justify">
@@ -12,7 +12,7 @@
 </p>
 
 <p align="justify">
-  The SiA-WD will be iteratively expanded and the information, including that for devices already existing in the database, updated for a period of at least ten years. The user-friendly tool enables researchers to conveniently select the most suitable wearable for their study.
+  The SiA-WD will be iteratively expanded and the information, including that for devices already existing in the database, updated for a period of at least ten years (2023-2033). The user-friendly tool enables researchers to conveniently select the most suitable wearable for their study.
 </p>
 
 ## How to use the SiA Wearable Database Shiny App
