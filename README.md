@@ -34,8 +34,9 @@
   wearables across multiple dimensions related to expert evaluation, device characteristics,
   technical capabilities, measured signals, data access, and scientific evidence. All filters
   are dynamically linked: available options automatically update to reflect only valid and
-  compatible combinations. Both the filtered results and the applied filter settings can be
-  downloaded for reproducibility.
+  compatible combinations. The module provides two downloadable outputs:
+  <strong>(1) the filtered results</strong> and <strong>(2) the filter settings</strong>, supporting
+  transparent and reproducible reporting.
 </p>
 
 1. <strong>SiA Expert Score</strong> (3 filters)
@@ -95,7 +96,7 @@
   <li>CE Marked (checkbox)</li>
 </ul>
 
-6. <strong>Reliability, Validity & Usability</strong>
+6. <strong>Reliability, Validity &amp; Usability</strong>
 <ul>
   <li>Reliability &amp; Validity Studies (number of studies; slider)</li>
   <li>Usability Studies (number of studies; slider)</li>
