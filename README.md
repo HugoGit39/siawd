@@ -5,7 +5,7 @@
 ## About
 
 <img align="right"
-     src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png"
+     src="https://raw.githubusercontent.com/HugoGit39/siawd/refs/heads/master/inst/app/www/sia_hexsticker.png"
      width="200"
      alt="SIA Hex Sticker">
 
