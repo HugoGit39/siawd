@@ -171,8 +171,6 @@ The Live version, R Shiny Server based source code, is publicly available in the
 `Stress in Action` website: [https://stress-in-action.nl](https://stress-in-action.nl)  
 - <a href="https://stress-in-action.nl/terms-of-use/">Stress in Action Terms of Use</a> – Copyright holder
 
-## R package dependencies
-
 - `{shiny}` – https://github.com/rstudio/shiny  
 - `{bs4Dash}` – https://github.com/RinteRface/bs4Dash  
 - `{dplyr}` – https://github.com/tidyverse/dplyr  
