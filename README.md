@@ -125,10 +125,9 @@ siawd::run_app()
 
 ## Live version
 
-**Live Wearable Shiny App website:**  
-[wearables.stress-in-action.nl](https://wearables.stress-in-action.nl/)
+**Live Wearable Shiny App website:** <https://wearables.stress-in-action.nl/>
 
-The R SHiney Server based source code corresponding to the live deployment is publicly available in the following GitHub repository:
+The Live version, R Shiny Server based source code, is publicly available in the following GitHub repository:
 
 **Source code:**  
 [sia.project.1.wd.shiny](https://github.com/HugoGit39/sia.project.1.wd.shiny)
