@@ -9,6 +9,14 @@
 This package contains the Shiny application for the
 Stress in Action Wearables Database (SiA-WD).
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/HugoGit39/siawd}
+  \item Report bugs at \url{https://github.com/HugoGit39/siawd/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Hugo Klarenberg \email{h.klarenberg@vu.nl}
 

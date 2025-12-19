@@ -21,9 +21,11 @@
 #' @importFrom reactable reactable colDef reactableTheme reactableOutput renderReactable
 #' @importFrom reactablefmtr data_bars
 #' @importFrom htmltools tagList tags div span strong em br a img p
+#' @importFrom htmlwidgets JS
 #' @importFrom rlang `%||%`
 #' @importFrom writexl write_xlsx
 #' @importFrom golem with_golem_options
 #' @importFrom sever useSever reload_button reload_link sever
 #' @importFrom shinySearchbar searchbar
+#' @importFrom scales rescale
 "_PACKAGE"

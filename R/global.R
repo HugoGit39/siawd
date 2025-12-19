@@ -3,12 +3,7 @@
 
 # 1. Load .Renviron (optional) --------------------------------------------
 
-try({
-  renv_path <- app_sys("app", ".Renviron")
-  if (file.exists(renv_path)) {
-    readRenviron(renv_path)
-  }
-}, silent = TRUE)
+readRenviron(".Renviron")
 
 # 2. Load data -----------------------------------------------------------
 
