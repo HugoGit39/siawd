@@ -156,28 +156,27 @@ The Live version, R Shiny Server based source code, is publicly available in the
 `Stress in Action` website: [https://stress-in-action.nl](https://stress-in-action.nl)  
 - <a href="https://stress-in-action.nl/terms-of-use/">Stress in Action Terms of Use</a> – Copyright holder
 
-### R package dependencies
+## R package dependencies
 
-```text
-{shiny}            https://github.com/rstudio/shiny
-{bs4Dash}          https://github.com/RinteRface/bs4Dash
-{dplyr}            https://github.com/tidyverse/dplyr
-{rlang}            https://github.com/r-lib/rlang
-{scales}           https://github.com/r-lib/scales
-{fresh}            https://github.com/dreamRs/fresh
-{lubridate}        https://github.com/tidyverse/lubridate
-{shinySearchbar}   https://github.com/jsdnrs/shiny-searchbar
-{emayili}          https://github.com/datawookie/emayili
-{shinyjs}          https://github.com/daattali/shinyjs
-{sever}            https://github.com/JohnCoene/sever
-{shinycssloaders}  https://github.com/andrewsali/shinycssloaders
-{shinyWidgets}     https://github.com/dreamRs/shinyWidgets
-{reactablefmtr}    https://github.com/kcuilla/reactablefmtr
-{reactable}        https://github.com/glin/reactable
-{htmltools}        https://github.com/rstudio/htmltools
-{htmlwidgets}      https://github.com/ramnathv/htmlwidgets
-{writexl}          https://github.com/ropensci/writexl
-```
+- `{shiny}` – https://github.com/rstudio/shiny  
+- `{bs4Dash}` – https://github.com/RinteRface/bs4Dash  
+- `{dplyr}` – https://github.com/tidyverse/dplyr  
+- `{rlang}` – https://github.com/r-lib/rlang  
+- `{scales}` – https://github.com/r-lib/scales  
+- `{fresh}` – https://github.com/dreamRs/fresh  
+- `{lubridate}` – https://github.com/tidyverse/lubridate  
+- `{shinySearchbar}` – https://github.com/jsdnrs/shiny-searchbar  
+- `{emayili}` – https://github.com/datawookie/emayili  
+- `{shinyjs}` – https://github.com/daattali/shinyjs  
+- `{sever}` – https://github.com/JohnCoene/sever  
+- `{shinycssloaders}` – https://github.com/andrewsali/shinycssloaders  
+- `{shinyWidgets}` – https://github.com/dreamRs/shinyWidgets  
+- `{reactablefmtr}` – https://github.com/kcuilla/reactablefmtr  
+- `{reactable}` – https://github.com/glin/reactable  
+- `{htmltools}` – https://github.com/rstudio/htmltools  
+- `{htmlwidgets}` – https://github.com/ramnathv/htmlwidgets  
+- `{writexl}` – https://github.com/ropensci/writexl
+
 
 
 
