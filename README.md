@@ -127,8 +127,7 @@ remotes::install_github("HugoGit39/siawd")
 
 # Launch the app
 siawd::run_app()
-
-```r
+```
 
 ## Support
 
