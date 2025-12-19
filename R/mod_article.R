@@ -315,8 +315,9 @@ mod_article_server <- function(id) {
         "s13428-025-02685-4.pdf"
       },
       content = function(file) {
-        file.copy("www/s13428-025-02685-4.pdf", file)
-      }
+        file.copy(app_sys("app", "www", "s13428-025-02685-4.pdf"), file)
+      },
+      contentType = "application/pdf"
     )
   })
 }
