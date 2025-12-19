@@ -125,17 +125,13 @@ siawd::run_app()
 
 ## Live version
 
-<p align="justify"> 
-  <strong>Live Wearable Shiny App website:</strong>
-  <a href="https://wearables.stress-in-action.nl/" target="_blank">
-    wearables.stress-in-action.nl
-  </a>
-  <br>
-  <strong>Source code:</strong>
-  <a href="https://github.com/HugoGit39/sia.project.1.wd.shiny" target="_blank">
-    github.com/HugoGit39/sia.project.1.wd.shiny
-  </a>
-</p>
+## Live version
+
+**Live Wearable Shiny App website:**  
+[wearables.stress-in-action.nl](https://wearables.stress-in-action.nl/)
+
+**Source code:**  
+[sia.project.1.wd.shiny](https://github.com/HugoGit39/sia.project.1.wd.shiny)
 
 ## Support
 
