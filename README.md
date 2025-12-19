@@ -129,36 +129,6 @@ remotes::install_github("HugoGit39/siawd")
 siawd::run_app()
 
 ```r
-shiny::runApp("path/to/your/app")`
-```
-
-## Repository structure
-
-```bash
-sia.project.1.wi.shiny/
-├─ production/
-│  └─ app/
-│     ├─ data/
-│     ├─ functions/
-│     ├─ modules/
-│     ├─ www/
-│     ├─ app.R
-│     └─ global.R
-│
-├─ test/
-│  └─ app/
-│     ├─ data/
-│     ├─ functions/
-│     ├─ modules/
-│     ├─ www/
-│     ├─ app.R
-│     └─ global.R
-│
-├─ .gitignore
-├─ LICENSE
-├─ README.md
-└─ project.1.sia.wi.shiny.Rproj
-```
 
 ## Support
 
@@ -178,39 +148,35 @@ sia.project.1.wi.shiny/
 
 <p align="justify"> This application is based on the following publication: <br> <strong> Schoenmakers M, Saygin M, Sikora M, Vaessen T, Noordzij M, de Geus E. <em>Stress in action wearables database: A database of noninvasive wearable monitors with systematic technical, reliability, validity, and usability information.</em> Behav Res Methods. 2025 May 13;57(6):171. </strong> <br> <a href="https://link.springer.com/article/10.3758/s13428-025-02685-4" target="_blank"> https://link.springer.com/article/10.3758/s13428-025-02685-4 </a> </p> <p align="justify"> Please cite this paper when publishing or sharing any analysis that uses outputs from the filters in this app. </p>
 
-- <a href="https://stress-in-action.nl/artemis-stefani/">A. Stefani</a> - Author RT2
-- <a href="https://stress-in-action.nl/myrte-schoenmakers/">M.A. Schoenmakers</a> - Author RT2
-- <a href="https://stress-in-action.nl/melisa-saygin/">M. Saygin</a> - Author RT2
-- <a href="https://stress-in-action.nl/magdalena-sikora/">M. Sikora</a> - Author RT2
-- <a href="https://stress-in-action.nl/matthijs-noordzij/">M. Noordzij</a> - Author RT2
-- <a href="https://stress-in-action.nl/eco-de-geus/">J.C.N. de Geus</a> - Author RT2
-
 - <a href="https://stress-in-action.nl/hugo-klarenberg/">H. Klarenberg</a> - Author, app maintainer
 
 ## Resources
 
-`Stress in Action` website: [https://stress-in-action.nl](https://stress-in-action.nl)
+`Stress in Action` website: [https://stress-in-action.nl](https://stress-in-action.nl)  
+- <a href="https://stress-in-action.nl/terms-of-use/">Stress in Action Terms of Use</a> – Copyright holder
 
-- <a href="https://stress-in-action.nl/terms-of-use/">Stress in Action</a> - Copyright holder 
+### R package dependencies
 
-- {bs4Dash} - [https://github.com/RinteRface/bs4Dash](https://github.com/RinteRface/bs4Dash)  
-- {dplyr} - [https://github.com/tidyverse/dplyr](https://github.com/tidyverse/dplyr)   
-- {emayili} - [https://github.com/datawookie/emayili](https://github.com/datawookie/emayili)  
-- {fresh} - [https://github.com/dreamRs/fresh](https://github.com/dreamRs/fresh)  
-- {here} - [https://github.com/r-lib/here](https://github.com/r-lib/here)  
-- {htmltools} - [https://github.com/rstudio/htmltools](https://github.com/rstudio/htmltools)  
-- {htmlwidgets} - [https://github.com/ramnathv/htmlwidgets](https://github.com/ramnathv/htmlwidgets)  
-- {lubridate} - [https://github.com/tidyverse/lubridate](https://github.com/tidyverse/lubridate)  
-- {reactable} - [https://github.com/glin/reactable](https://github.com/glin/reactable)  
-- {reactablefmtr} - [https://github.com/kcuilla/reactablefmtr](https://github.com/kcuilla/reactablefmtr)  
-- {rlang} - [https://github.com/r-lib/rlang](https://github.com/r-lib/rlang)  
-- {scales} - [https://github.com/r-lib/scales](https://github.com/r-lib/scales)  
-- {sever} - [https://github.com/JohnCoene/sever](https://github.com/JohnCoene/sever)  
-- {shiny} - [https://github.com/rstudio/shiny](https://github.com/rstudio/shiny)  
-- {shinycssloaders} - [https://github.com/andrewsali/shinycssloaders](https://github.com/andrewsali/shinycssloaders)  
-- {shinyjs} - [https://github.com/daattali/shinyjs](https://github.com/daattali/shinyjs)  
-- {shinySearchbar} - [https://github.com/jsdnrs/shiny-searchbar](https://github.com/jsdnrs/shiny-searchbar)  
-- {shinyWidgets} - [https://github.com/dreamRs/shinyWidgets](https://github.com/dreamRs/shinyWidgets)
+```text
+{shiny}            https://github.com/rstudio/shiny
+{bs4Dash}          https://github.com/RinteRface/bs4Dash
+{dplyr}            https://github.com/tidyverse/dplyr
+{rlang}            https://github.com/r-lib/rlang
+{scales}           https://github.com/r-lib/scales
+{fresh}            https://github.com/dreamRs/fresh
+{lubridate}        https://github.com/tidyverse/lubridate
+{shinySearchbar}   https://github.com/jsdnrs/shiny-searchbar
+{emayili}          https://github.com/datawookie/emayili
+{shinyjs}          https://github.com/daattali/shinyjs
+{sever}            https://github.com/JohnCoene/sever
+{shinycssloaders}  https://github.com/andrewsali/shinycssloaders
+{shinyWidgets}     https://github.com/dreamRs/shinyWidgets
+{reactablefmtr}    https://github.com/kcuilla/reactablefmtr
+{reactable}        https://github.com/glin/reactable
+{htmltools}        https://github.com/rstudio/htmltools
+{htmlwidgets}      https://github.com/ramnathv/htmlwidgets
+{writexl}          https://github.com/ropensci/writexl
+
 
 
 
