@@ -118,9 +118,15 @@
 	<strong>Live Wearable Shiny App website:</strong> <a href="https://wearables.stress-in-action.nl/" target="_blank">	https://wearables.stress-in-action.nl/</a> 
 </p>
 
-## Run the app
+## Run the app locally
 
-<p align="justify"> The SiA Wearable Database Shiny App can be run in two environments: </p> <ul> <li> <strong>Test: Local Environment</strong> <br> This version can be run directly on your local machine using R. It includes the full user interface, filtering logic, and data display features for development and testing purposes. </li> <br> <li> <strong>Production: Shiny Server Environment</strong> <br> This version is deployed on a Shiny Server and is intended for official use. It includes access to the full wearable validation pipeline and is optimized for multi-user interaction. </li> </ul> <p align="justify"> <strong>Note:</strong> For <em>both</em> the test and production versions, the email functionality is disabled unless the correct SMTP credentials are present in a private <code>.Renviron</code> file. These credentials are <strong>not</strong> included in the public repository, as they contain confidential DISC email server information. </p> <p align="justify"> To run the app locally for testing purposes, use the following R code: </p>
+```r
+# Install the SiA-WD {golem} app from GitHub
+install.packages("remotes")
+remotes::install_github("HugoGit39/siawd")
+
+# Launch the app
+siawd::run_app()
 
 ```r
 shiny::runApp("path/to/your/app")`
