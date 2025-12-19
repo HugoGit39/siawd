@@ -110,7 +110,7 @@ mod_about_ui <- function(id) {
               href = "https://stress-in-action.nl/hugo-klarenberg/",
               target = "_blank",
               img(
-                src = "favicon.ico",
+                src = "www/favicon.ico",
                 style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
               )
             ),
@@ -233,7 +233,7 @@ mod_about_ui <- function(id) {
                        href = "https://stress-in-action.nl/myrte-schoenmakers/",
                        target = "_blank",
                        img(
-                         src = "favicon.ico",
+                         src = "www/favicon.ico",
                          style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
                        )
                      ),
@@ -256,7 +256,7 @@ mod_about_ui <- function(id) {
                        href = "https://stress-in-action.nl/melisa-saygin/",
                        target = "_blank",
                        img(
-                         src = "favicon.ico",
+                         src = "www/favicon.ico",
                          style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
                        )
                      ),
@@ -279,7 +279,7 @@ mod_about_ui <- function(id) {
                        href = "https://stress-in-action.nl/magdalena-sikora/",
                        target = "_blank",
                        img(
-                         src = "favicon.ico",
+                         src = "www/favicon.ico",
                          style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
                        )
                      ),
@@ -302,7 +302,7 @@ mod_about_ui <- function(id) {
                      href = "https://stress-in-action.nl/",
                      target = "_blank",
                      img(
-                       src = "favicon.ico",
+                       src = "www/favicon.ico",
                        style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
                      )
                    ),
@@ -325,7 +325,7 @@ mod_about_ui <- function(id) {
                        href = "https://stress-in-action.nl/artemis-stefani/",
                        target = "_blank",
                        img(
-                         src = "favicon.ico",
+                         src = "www/favicon.ico",
                          style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
                        )
                      ),
@@ -348,7 +348,7 @@ mod_about_ui <- function(id) {
                        href = "https://stress-in-action.nl/matthijs-noordzij/",
                        target = "_blank",
                        img(
-                         src = "favicon.ico",
+                         src = "www/favicon.ico",
                          style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
                        )
                      ),
@@ -371,7 +371,7 @@ mod_about_ui <- function(id) {
                        href = "https://stress-in-action.nl/eco-de-geus/",
                        target = "_blank",
                        img(
-                         src = "favicon.ico",
+                         src = "www/favicon.ico",
                          style = "width:25px; height:25px; vertical-align:middle; margin-right:5px;"
                        )
                      ),
