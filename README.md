@@ -29,20 +29,87 @@
 
 <strong>Feature Filter</strong>
 
-<p align="justify"> The <strong>Feature Filter</strong> is a powerful, modular interface that allows filtering wearables on 44 different variables. These filters are grouped into six well-defined categories. The app dynamically updates all options to show only compatible selections. You can download both the filtered results and your filter settings. </p>
-1. SiA Expert Score (3 filters)
-<ul> <li>Long-Term Expert Score (slider: 0–10)</li> <li>Short-Term Expert Score (slider: 0–10)</li> <li>Exclude missing SiA scores (YES/NO switch)</li> </ul>
-2. General Device Information (10 filters)
-<ul> <li>Manufacturer (multi-select dropdown)</li> <li>Model (multi-select dropdown)</li> <li>Release Year Range (date range slider)</li> <li>Market Status (multi-select dropdown)</li> <li>Main Use (multi-select dropdown)</li> <li>Device Cost (€) (slider)</li> <li>Type (multi-select dropdown)</li> <li>Location (multi-select dropdown)</li> <li>Weight (g) (slider)</li> <li>Size (multi-select dropdown)</li> </ul>
-3. Technical Specifications (6 filters)
-<ul> <li>Water Resistant (checkbox)</li> <li>Battery Life (min) (slider)</li> <li>Charging Method (multi-select dropdown)</li> <li>Charging Duration (min) (slider)</li> <li>Bio Cueing (checkbox)</li> <li>Bio Feedback (checkbox)</li> </ul>
-4. Signals Measured (13 filters)
-<ul> <li>Photoplethysmogram (PPG) (checkbox)</li> <li>Electrocardiogram (ECG) (checkbox)</li> <li>Impedance Cardiography (ICG) (checkbox)</li> <li>Electromyography (EMG) (checkbox)</li> <li>Respiration (checkbox)</li> <li>Electrodermal Activity (EDA) (checkbox)</li> <li>Electroencephalography (EEG) (checkbox)</li> <li>Blood Pressure (BP) (checkbox)</li> <li>Accelerometer (checkbox)</li> <li>Gyroscope (checkbox)</li> <li>GPS (checkbox)</li> <li>Skin Temperature (checkbox)</li> <li>Other Signals (multi-select dropdown)</li> </ul>
-5. Data Access (9 filters)
-<ul> <li>Raw Data Available (checkbox)</li> <li>Data Transmission Method (multi-select dropdown)</li> <li>Internal Storage (checkbox)</li> <li>Server Storage (checkbox)</li> <li>Storage Capacity (MB) (slider)</li> <li>Storage Capacity (hrs) (slider)</li> <li>GDPR Compliant (checkbox)</li> <li>FDA Approved (checkbox)</li> <li>CE Label (checkbox)</li> </ul>
-6. Validation, Reliability & Usability (3 filters)
-<ul> <li>Validation Level (multi-select dropdown)</li> <li>Number of Validation/Reliability Studies (slider)</li> <li>Number of Usability Studies (slider)</li> </ul>
-<p align="justify"> Every filter selection instantly updates the available options in other dropdowns and sliders to reflect valid combinations. This guarantees a coherent, data-consistent exploration experience. Filtered tables and filter settings can be downloaded using dedicated buttons in the interface. </p>
+<p align="justify">
+  The <strong>Feature Filter</strong> is a powerful, modular interface that allows filtering
+  wearables across multiple dimensions related to expert evaluation, device characteristics,
+  technical capabilities, measured signals, data access, and scientific evidence. All filters
+  are dynamically linked: available options automatically update to reflect only valid and
+  compatible combinations. Both the filtered results and the applied filter settings can be
+  downloaded for reproducibility.
+</p>
+
+1. <strong>SiA Expert Score</strong> (3 filters)
+<ul>
+  <li>Long-Term Expert Score (slider: 0–10)</li>
+  <li>Short-Term Expert Score (slider: 0–10)</li>
+  <li>Exclude missing SiA scores (YES/NO switch)</li>
+</ul>
+
+2. <strong>General Device Information</strong>
+<ul>
+  <li>Manufacturer (multi-select dropdown)</li>
+  <li>Model (multi-select dropdown)</li>
+  <li>Release Year Range (slider; e.g., 2007–2024)</li>
+  <li>Market Status (multi-select dropdown)</li>
+  <li>Main Use (multi-select dropdown)</li>
+  <li>Device Cost (€) (slider)</li>
+  <li>Type (multi-select dropdown)</li>
+  <li>Location (multi-select dropdown)</li>
+</ul>
+
+3. <strong>Technical Specifications</strong>
+<ul>
+  <li>Water Resistant (checkbox)</li>
+  <li>Battery Life (hours) (slider)</li>
+  <li>Charging Duration (minutes) (slider)</li>
+  <li>Bio Cueing (checkbox)</li>
+  <li>Bio Feedback (checkbox)</li>
+</ul>
+
+4. <strong>Signals Measured</strong>
+<ul>
+  <li>Accelerometer (checkbox)</li>
+  <li>Blood Pressure (checkbox)</li>
+  <li>Electrocardiogram (ECG) (checkbox)</li>
+  <li>Electrodermal Activity (EDA) (checkbox)</li>
+  <li>Electroencephalography (EEG) (checkbox)</li>
+  <li>Electromyography (EMG) (checkbox)</li>
+  <li>Global Positioning System (GPS) (checkbox)</li>
+  <li>Gyroscope (checkbox)</li>
+  <li>Impedance Cardiography (ICG) (checkbox)</li>
+  <li>Photoplethysmogram (PPG) (checkbox)</li>
+  <li>Respiration (checkbox)</li>
+  <li>Skin Temperature (checkbox)</li>
+  <li>Other Signals (multi-select dropdown)</li>
+</ul>
+
+5. <strong>Data Access</strong>
+<ul>
+  <li>Raw Data Available (checkbox)</li>
+  <li>Internal Storage (checkbox)</li>
+  <li>Server Storage (checkbox)</li>
+  <li>Storage Capacity (MB) (slider)</li>
+  <li>Storage Capacity (hours) (slider)</li>
+  <li>GDPR Compliant (checkbox)</li>
+  <li>FDA Cleared (checkbox)</li>
+  <li>CE Marked (checkbox)</li>
+</ul>
+
+6. <strong>Reliability, Validity & Usability</strong>
+<ul>
+  <li>Reliability &amp; Validity Studies (number of studies; slider)</li>
+  <li>Usability Studies (number of studies; slider)</li>
+  <li>Reliability &amp; Validity Evidence Level (multi-select dropdown)</li>
+  <li>Usability Evidence Level (multi-select dropdown)</li>
+</ul>
+
+<p align="justify">
+  Every filter selection instantly updates the available options in other dropdowns and sliders
+  to reflect valid combinations only. This guarantees a coherent, data-consistent exploration
+  experience and supports transparent, reproducible comparison of wearable devices.
+  The resulting table output also includes a <strong>“More Details”</strong> column, which provides
+  access to more granular, device-specific information for in-depth inspection.
+</p>
 
 ## Live version
 
