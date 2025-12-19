@@ -129,8 +129,7 @@ siawd::run_app()
 
 The Live version, R Shiny Server based source code, is publicly available in the following GitHub repository:
 
-**Source code:**  
-[sia.project.1.wd.shiny](https://github.com/HugoGit39/sia.project.1.wd.shiny)
+**Source code:** [sia.project.1.wd.shiny](https://github.com/HugoGit39/sia.project.1.wd.shiny)
 
 ## Support
 
