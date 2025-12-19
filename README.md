@@ -157,7 +157,7 @@ The Live version, R Shiny Server based source code, is publicly available in the
 </p>
 
 <p align="justify">
-  For detailed questions about the wearable validation pipeline database, please get in touch with a member of RT2</a>.
+  For detailed questions about the wearable validation pipeline database, please get in touch with a member the offical publication</a>.
 </p>
 
 ## Authors and Citation
@@ -168,9 +168,9 @@ The Live version, R Shiny Server based source code, is publicly available in the
 
 ## Resources
 
-`Stress in Action` website: [https://stress-in-action.nl](https://stress-in-action.nl)  
-- <a href="https://stress-in-action.nl/terms-of-use/">Stress in Action Terms of Use</a> – Copyright holder
+`Stress in Action` website: [https://stress-in-action.nl](https://stress-in-action.nl)
 
+- <a href="https://stress-in-action.nl/terms-of-use/">Stress in Action Terms of Use</a> – Copyright holder
 - `{shiny}` – https://github.com/rstudio/shiny  
 - `{bs4Dash}` – https://github.com/RinteRface/bs4Dash  
 - `{dplyr}` – https://github.com/tidyverse/dplyr  
@@ -179,6 +179,7 @@ The Live version, R Shiny Server based source code, is publicly available in the
 - `{fresh}` – https://github.com/dreamRs/fresh  
 - `{lubridate}` – https://github.com/tidyverse/lubridate  
 - `{shinySearchbar}` – https://github.com/jsdnrs/shiny-searchbar  
+- `{emayili}` – https://github.com/datawookie/emayili  
 - `{shinyjs}` – https://github.com/daattali/shinyjs  
 - `{sever}` – https://github.com/JohnCoene/sever  
 - `{shinycssloaders}` – https://github.com/andrewsali/shinycssloaders  
@@ -188,6 +189,7 @@ The Live version, R Shiny Server based source code, is publicly available in the
 - `{htmltools}` – https://github.com/rstudio/htmltools  
 - `{htmlwidgets}` – https://github.com/ramnathv/htmlwidgets  
 - `{writexl}` – https://github.com/ropensci/writexl
+
 
 
 
