@@ -128,13 +128,14 @@ siawd::run_app()
 <p align="justify"> 
   <strong>Live Wearable Shiny App website:</strong>
   <a href="https://wearables.stress-in-action.nl/" target="_blank">
-    https://wearables.stress-in-action.nl/
+    wearables.stress-in-action.nl
   </a>
   <br>
   <strong>Source code:</strong>
   <a href="https://github.com/HugoGit39/sia.project.1.wd.shiny" target="_blank">
-    https://github.com/HugoGit39/sia.project.1.wd.shiny
+    github.com/HugoGit39/sia.project.1.wd.shiny
   </a>
+</p>
 
 ## Support
 
