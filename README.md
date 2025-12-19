@@ -138,6 +138,8 @@ remotes::install_github("HugoGit39/siawd")
 siawd::run_app()
 ```
 
+The App will open in your prefered browser.
+
 ## Live version
 
 **Live Wearable Shiny App website:** <https://wearables.stress-in-action.nl/>
