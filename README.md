@@ -112,6 +112,21 @@
   access to more granular, device-specific information for in-depth inspection.
 </p>
 
+<strong>Submit Data</strong>
+
+<p align="justify">
+  Users can also contribute to the SiA Wearable Database by submitting information on
+  wearable devices that are not yet included. This submission page follows the same
+  structured layout as the <strong>Feature Filter</strong>, ensuring consistency between
+  exploration and data entry.
+</p>
+
+<p align="justify">
+  Mandatory fields are required to ensure high-quality and complete input. All submitted
+  entries are <strong>thoroughly reviewed</strong> by the SiA team before being validated and
+  added to the database.
+</p>
+
 ## Run the app locally
 
 ```r
