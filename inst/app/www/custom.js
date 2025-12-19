@@ -1,5 +1,126 @@
 /* 1. App info*/
 
+/* Layout message box. */
+
+function showSiAMessage(message, title = "Info") {
+
+  let modal = document.getElementById('sia-message-modal');
+
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'sia-message-modal';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.35)';
+    modal.style.zIndex = '9999';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.fontFamily = 'inherit';
+
+    const box = document.createElement('div');
+    box.id = 'sia-message-box';
+    box.style.backgroundColor = 'white';
+    box.style.maxWidth = '420px';
+    box.style.width = '90%';
+    box.style.maxHeight = '80%';
+    box.style.padding = '16px 18px 12px 18px';
+    box.style.borderRadius = '8px';
+    box.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+    box.style.display = 'flex';
+    box.style.flexDirection = 'column';
+    box.style.position = 'relative';
+    box.style.fontFamily = 'inherit';
+
+    const header = document.createElement('div');
+    header.style.display = 'flex';
+    header.style.justifyContent = 'flex-start';
+    header.style.alignItems = 'center';
+
+    const h = document.createElement('h4');
+    h.id = 'sia-message-title';
+    h.style.margin = '0';
+    h.style.paddingRight = '40px';
+
+    header.appendChild(h);
+    box.appendChild(header);
+
+    const body = document.createElement('div');
+    body.id = 'sia-message-body';
+    body.style.marginTop = '10px';
+    body.style.whiteSpace = 'pre-wrap';
+    body.style.overflowY = 'auto';
+    body.style.flex = '1';
+    body.style.lineHeight = '1.3';
+    body.style.fontFamily = 'inherit';
+
+    box.appendChild(body);
+
+    // ---- footer with SiA blue Close button (bottom-right) ----
+    const footer = document.createElement('div');
+    footer.style.display = 'flex';
+    footer.style.justifyContent = 'flex-end';
+    footer.style.marginTop = '12px';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.id = 'sia-message-close';
+    closeBtn.textContent = 'Close';
+    closeBtn.style.padding = '6px 16px';
+    closeBtn.style.borderRadius = '4px';
+    closeBtn.style.border = '1px solid #1c75bc';
+    closeBtn.style.background = '#1c75bc';
+    closeBtn.style.color = 'white';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.fontSize = '14px';
+    closeBtn.style.fontFamily = 'inherit';
+    closeBtn.style.fontWeight = '500';
+    closeBtn.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
+
+    // remove black focus outline / tap highlight
+    closeBtn.style.outline = 'none';
+    closeBtn.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
+    closeBtn.style.webkitTapHighlightColor = 'transparent';
+    closeBtn.onfocus = function () { this.blur(); };
+
+    closeBtn.onclick = function () {
+      modal.style.display = 'none';
+    };
+
+    footer.appendChild(closeBtn);
+    box.appendChild(footer);
+
+    modal.appendChild(box);
+    document.body.appendChild(modal);
+
+    // Close when clicking outside the box
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  }
+
+  const titleEl = document.getElementById('sia-message-title');
+titleEl.textContent = '';
+
+if (title === 'Success') {
+  const tick = document.createElement('span');
+  tick.textContent = '✔';
+  tick.style.color = '#44AA99';   // green
+  tick.style.marginRight = '6px';
+  tick.style.fontWeight = '700';
+
+  titleEl.appendChild(tick);
+}
+
+titleEl.appendChild(document.createTextNode(title));
+
+  document.getElementById('sia-message-body').textContent  = message;
+  modal.style.display = 'flex';
+}
+
 /* This function sets up the citation copy button. */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,10 +129,88 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.onclick = function () {
       const citation = `Schoenmakers M, Saygin M, Sikora M, Vaessen T, Noordzij M, de Geus E. Stress in action wearables database: A database of noninvasive wearable monitors with systematic technical, reliability, validity, and usability information. Behav Res Methods. 2025 May 13;57(6):171. doi: 10.3758/s13428-025-02685-4. PMID: 40360861; PMCID: PMC12075381.`;
       navigator.clipboard.writeText(citation).then(() => {
-        alert("Citations copied to clipboard!");
+        showSiAMessage("Citations copied to clipboard!", "Success");
       });
     };
   }
+});
+
+
+/* LICENSE information */
+
+$(document).ready(function () {
+
+  setTimeout(function () {
+    var button = $('.license-info-btn');
+    var timer;
+
+    button.popover({
+      html: true,
+      trigger: 'manual',
+      placement: 'bottom',
+      container: 'body',
+      sanitize: false,
+      template:
+        '<div class="popover" role="tooltip" style="max-width:520px !important;">' +
+        '<div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
+      content: `
+        <div id='license-popover'
+             style='max-height:260px; overflow-y:auto; overflow-x:hidden;
+                    text-align:left; line-height:1.3; width:500px; padding-right:6px;'>
+
+          This Shiny app and its included data are licensed under the
+          <b>Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)</b>.<br><br>
+
+          <b>You are free to:</b><br>
+          • <b>Share</b> — copy and redistribute the material in any medium or format.<br>
+          • <b>Use</b> — the data for research or educational purposes.<br><br>
+
+          <b>Under the following terms:</b><br>
+          • <b>Attribution</b> — You must give appropriate credit and cite the following papers:<br>
+          &nbsp;&nbsp;1. Schoenmakers M, Saygin M, Sikora M, Vaessen T, Noordzij M, de Geus E.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"Stress in Action Wearables Database: A database of noninvasive wearable monitors<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;with systematic technical, reliability, validity, and usability information."<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Behavior Research Methods (2025). doi:10.3758/s13428-025-02685-4<br>
+          &nbsp;&nbsp;2. Klarenberg H. et al. (2025). "Stress in Action Wearables Shiny App."<br><br>
+
+          • <b>NonCommercial</b> — You may not use the data for commercial purposes, including selling, advertising, or incorporating it into paid products or services.<br><br>
+
+          • <b>NoDerivatives</b> — You may not modify, transform, or build upon the data, nor distribute modified versions.<br><br>
+
+          <b>Full legal text:</b><br>
+          <a href='https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode' target='_blank'>
+            https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+          </a>
+        </div>
+      `
+    });
+
+    // Show popover on hover
+    button.on('mouseenter', function () {
+      clearTimeout(timer);
+      var btn = $(this);
+      btn.popover('show');
+
+      // Keep open when hovering the popover
+      $(document).on('mouseenter', '#license-popover', function () {
+        clearTimeout(timer);
+      });
+      $(document).on('mouseleave', '#license-popover', function () {
+        timer = setTimeout(function () { btn.popover('hide'); }, 200);
+      });
+    });
+
+    // Hide on mouseleave
+    button.on('mouseleave', function () {
+      var btn = $(this);
+      timer = setTimeout(function () {
+        if (!$('#license-popover:hover').length) {
+          btn.popover('hide');
+        }
+      }, 200);
+    });
+
+  }, 800);
 });
 
 /* 2. Filters*/
@@ -254,24 +453,40 @@ $(document).ready(function () {
 
 // Data submited
 Shiny.addCustomMessageHandler("dataSubmitted", function(message) {
-  alert(message);
+  showSiAMessage("Data submitted, thank you!", "Success");
 });
 
 /* 4. Research*/
 
 /* 5. About*/
 
+/* This function sets up the local install/run code copy button. */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("copy_local_code_btn");
+  if (btn) {
+    btn.onclick = function () {
+      const code = `# Install the SIA-WD golem package from GitHub
+install.packages("remotes")
+remotes::install_github("HugoGit39/siawd")
+
+# Run the app
+siawd::run_app()`;
+
+      navigator.clipboard.writeText(code).then(() => {
+        showSiAMessage("Code copied to clipboard!", "Success");
+      });
+    };
+  }
+});
+
+
 /* 6. Contact*/
 
 // Email submited
 Shiny.addCustomMessageHandler("emailSubmitted", function(message) {
-  alert(message);
+  showSiAMessage("Email submitted", "Success");
 });
-
-
-
-
-
 
 
 

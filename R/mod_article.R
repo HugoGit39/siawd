@@ -64,7 +64,7 @@ mod_article_ui <- function(id) {
                     style = "color: #1c75bc;"
                   ),
                   img(
-                    src = "article_asreview_process.png",
+                    src = "www/article_asreview_process.png",
                     style = "max-width: 100%; height: auto; display: block; margin: 0 auto; margin-bottom: 15px;"
                   )
                 )
@@ -249,7 +249,7 @@ mod_article_ui <- function(id) {
                   style = "text-align: justify;"
                 ),
                 img(
-                  src = "www/article_update_loop.png",
+                  src = "article_update_loop.png",
                   style = "display: block; margin: 15px auto; max-width: 100%; height: auto;"
                 )
               )

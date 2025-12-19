@@ -13,19 +13,28 @@ try({
 # 2. Load data -----------------------------------------------------------
 
 df_sia_shiny_filters <- readRDS(
-  app_sys("app", "www", "df_shiny_sia_wd_filter.rds")
+  system.file("data", "df_shiny_sia_wd_filter.rds", package = "siawd")
 )
 
 df_sia_shiny_info <- readRDS(
-  app_sys("app", "www", "df_shiny_sia_wd_info.rds")
+  system.file("data", "df_shiny_sia_wd_info.rds", package = "siawd")
 )
 
 df_sia_osf <- readRDS(
-  app_sys("app", "www", "df_osf_sia_wd_shiny.rds")
+  system.file("data", "df_osf_sia_wd_shiny.rds", package = "siawd")
 )
 
-glos <- readRDS(app_sys("app", "www", "glos.rds"))
-df_codebook <- readRDS(app_sys("app", "www", "df_codebook.rds"))
+glos <- readRDS(
+  system.file("data", "glos.rds", package = "siawd")
+)
+
+df_codebook <- readRDS(
+  system.file("data", "df_codebook.rds", package = "siawd")
+)
+
+updates <- readRDS(
+  system.file("data", "updates.rds", package = "siawd")
+)
 
 # 3. Derived values -------------------------------------------------------
 
@@ -129,12 +138,10 @@ rename_map <- c(
   "server_data_storage_spec_boel_value" = "Server Data Storage",
   "dev_storage_cap_hr_spec_num_value" = "Storage (hrs)",
   "dev_storage_cap_mb_spec_num_value" = "Storage (MB)",
+  "reliability_and_validity_n_of_studies" = "Reliability & Validity Studies (n)",
   "usability_n_of_studies" = "Usability Studies (n)",
-  "validity_and_reliability_n_of_studies" =
-    "Validity & Reliability Studies (n)",
-  "usability_evidence_level" = "Usability Evidence Level",
-  "validity_and_reliability_evidence_level" =
-    "Validity & Reliability Evidence Level"
+  "reliability_and_validity_evidence_level" = "Reliability & Validity Evidence Level",
+  "usability_evidence_level" = "Usability Evidence Level"
 )
 
 # 7. Submit data rename vector -------------------------------------------
@@ -147,20 +154,38 @@ rename_subm <- c(
   "additional_information"
 )
 
-# 8. Citations ------------------------------------------------------------
+# 8. License ------------------------------------------------------------
 
-df_citations <- data.frame(
-  Citation = c(
-    "Thank you for using the SiA-WD!",
-    "If you use the database and/or this web app, you must cite:",
-    "Schoenmakers M, Saygin M, Sikora M, Vaessen T, Noordzij M, de Geus E.",
-    "Stress in action wearables database: A database of noninvasive wearable monitors",
-    "with systematic technical, reliability, validity, and usability information.",
-    "Behav Res Methods. 2025 May 13;57(6):171.",
-    "doi: 10.3758/s13428-025-02685-4."
+df_license <- data.frame(
+  License = c(
+    "This Shiny app and its included data are licensed under the",
+    "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).",
+    "",
+    "You are free to:",
+    "- Share — copy and redistribute the material in any medium or format.",
+    "- Use — the data for research or educational purposes.",
+    "",
+    "Under the following terms:",
+    "- Attribution — You must give appropriate credit and cite the following papers:",
+    "  1. Schoenmakers M, Saygin M, Sikora M, Vaessen T, Noordzij M, de Geus E.",
+    "     \"Stress in Action Wearables Database: A database of noninvasive wearable monitors",
+    "     with systematic technical, reliability, validity, and usability information.\"",
+    "     Behavior Research Methods (2025). doi:10.3758/s13428-025-02685-4",
+    "  2. Klarenberg H. et al. (2025). \"Stress in Action Wearables Shiny App.\"",
+    "",
+    "- NonCommercial — You may not use the data for commercial purposes,",
+    "  including selling, advertising, or incorporating it into paid products or services.",
+    "",
+    "- NoDerivatives — You may not modify, transform, or build upon the data,",
+    "  nor distribute modified versions.",
+    "",
+    "Full legal text:",
+    "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode"
   ),
-  check.names = FALSE
+  check.names = FALSE,
+  stringsAsFactors = FALSE
 )
+
 
 # 9. Time-out message -----------------------------------------------------
 

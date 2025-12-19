@@ -26,12 +26,26 @@ mod_app_info_ui <- function(id) {
           width = 12,
           collapsible = FALSE,
           img(src = "www/info_app_beh_paper.png", width = "100%", style = "margin-top: 10px;"),
-          footer = tagList(
+          footer = div(
+            class = "d-flex justify-content-between align-items-center",
             actionButton(
               inputId = "copy_citation_btn",
               label = "Copy Citations",
               icon = icon("copy"),
               style = "background-color: #f15a29; color: white; margin-top: 5px;"
+            ),
+            actionButton(
+              inputId = ns("license_info"),
+              label   = tagList(
+                icon("info-circle", style = "color: #1c75bc;"),
+                "LICENSE"
+              ),
+              status  = "success",
+              outline = TRUE,
+              size    = "sm",
+              flat    = TRUE,
+              class   = "license-info-btn",
+              style   = "border-width: 2px;"
             )
           )
         )
@@ -41,25 +55,48 @@ mod_app_info_ui <- function(id) {
         width = 5,
         bs4Card(
           title = "Welcome to the SiA Wearables Database Web App",
-          style = "font-size: 18px; height: 400px; overflow-y: auto;",
+          style = "height: 400px; overflow-y: auto;",
           status = "primary",
           solidHeader = TRUE,
           width = 12,
           collapsible = FALSE,
           headerBorder = FALSE,
-          p("The Stress in Action Wearables Database (SiA-WD) is a new, comprehensive, well-sustained database of physiological wearable devices that have application potential in behavioral research, in particular stress research. It provides a large amount of information that a researcher would look for such as the general device information, recorded signals, technical specifications and data access, combined with a systematic validity, reliability and usability review of the available literature on a device.", br(), br(), "The SiA-WD will be iteratively expanded and the information, including that for devices already existing in the database, updated for a period of at least ten years. The user-friendly tool enables researchers to conveniently select the most suitable wearable for their study. ", style = "text-align: justify;"),
+
+          div(
+            style = "position: relative;",
+
+            img(
+              src = "www/sia_hexsticker.png",
+              style = "float: right;width: 180px;margin: 0 0 10px 15px;"
+            ),
+
+            p(
+              "The Stress in Action Wearables Database (SiA-WD) is a new, comprehensive, well-sustained database of physiological wearable devices that have application potential in behavioral research, in particular stress research. It provides a large amount of information that a researcher would look for such as the general device information, recorded signals, technical specifications and data access, combined with a systematic validity, reliability and usability review of the available literature on a device.",
+              br(), br(),
+              "The SiA-WD will be iteratively expanded and the information, including that for devices already existing in the database, updated for a period of at least ten years. The user-friendly tool enables researchers to conveniently select the most suitable wearable for their study.",
+              style = "text-align: justify;"
+            ),
+
+            div(style = "clear: both;")
+          ),
+
           footer = div(
             style = "padding-top: 10px;",
-            div(style = "text-align: center; font-size: 18px;",
-              p(strong(paste(n_wearables, "Wearables included"), style = "color: #f15a29;"),
+            div(
+              style = "text-align: center; font-size: 18px;",
+              p(
+                strong(paste(n_wearables, "Wearables included"), style = "color: #f15a29;"),
                 br(),
-                "see the ", icon("info-circle", style = "color:#1c75bc;"), " button in the top right for an overview ", br(), "of wearables and glossary.",
-                br(),br(),
-                strong("Updating in Dec/Jan to include 67+ wearables!", style = "color: #f15a29;")
+                "see the ", icon("info-circle", style = "color:#1c75bc;"),
+                " button in the top right for an overview ",
+                br(), "of wearables and glossary.",
+                br(), br(),
+                strong("Updating in Dec/Jan to include 67+ wearables!")
               )
             )
           )
         )
+
       )
     ),
 
@@ -80,9 +117,9 @@ mod_app_info_ui <- function(id) {
           p(strong("Terms of citation")),
           p(
             "When using the wearables database and/or this web app, you must cite the two papers listed under ",
-            strong("Papers to Cite", style = "color: #f15a29;"),
+            strong("Papers to Cite"),
             " and/or ",
-            strong("Research", style = "color: #1c75bc;"),"."
+            strong("Research"),"."
           ),
           p(strong("Using this app")),
           p(
@@ -136,15 +173,7 @@ mod_app_info_ui <- function(id) {
             collapsible = FALSE,
             headerBorder = FALSE,
             style = "max-height: 300px; overflow-y: auto;",
-            p(strong("December 2025"), br(), "Substantial update: all details wearables available plus improved user expierence (hoovering info etc.)."),
-            p(strong("September 2025"), br(), "Live release."),
-            p(strong("August 2025"), br(), "Tables updated with bars, yes/no and color coded cells."),
-            p(strong("July 2025"), br(), "Submit Data module live."),
-            p(strong("June 2025"), br(), "54 wearables included in App."),
-            p(strong("May 2025"), br(), "Stress in Action wearables database paper published!"),
-            p(strong("March 2025"), br(), "Feature Filter live."),
-            p(strong("February 2025"), br(), "Product Filter live."),
-            p(strong("January 2025"), br(), "Test version (MVP) live.")
+            updates
           )
         )
       ),

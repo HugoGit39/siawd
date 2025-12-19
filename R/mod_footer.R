@@ -40,6 +40,15 @@ mod_footer_ui <- function(id) {
             style = "width:25px; height:25px; vertical-align:middle; margin-left:10px;",
             alt = "GitHub"
           )
+        ),
+        a(
+          href = "https://github.com/HugoGit39/siawd",
+          target = "_blank",
+          img(
+            src = "www/sia_hexsticker_footer.png",
+            style = "width:25px; height:25px; vertical-align:middle; margin-left:10px;",
+            alt = "GitHub_golem"
+          )
         )
       ),
       right = tagList(

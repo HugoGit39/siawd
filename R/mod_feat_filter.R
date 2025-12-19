@@ -626,8 +626,8 @@ mod_feat_fil_server <- function(id, data) {
         write_xlsx(
           list(
             "Selected Devices" = export_df,
-            "Citations"        = df_citations,
-            "Glossary"         = df_codebook
+            "Glossary"         = df_codebook,
+            "LICENSE"        = df_license
           ),
           path = file
         )
@@ -677,8 +677,8 @@ mod_feat_fil_server <- function(id, data) {
         write_xlsx(
           list(
             "Filter settings" = df_settings,
-            "Citations"        = df_citations,
-            "Glossary" = df_codebook
+            "Glossary" = df_codebook,
+            "LICENSE" = df_license
           ),
           path = file
         )
