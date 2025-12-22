@@ -123,7 +123,15 @@ Figure 3 – Submission form showing all mandatory fields completed, enabling su
 
 The SiA-WD Shiny application is deployed as a publicly accessible web-based tool at https://wearables.stress-in-action.nl. The application is hosted on a dedicated virtual machine maintained by Vrije Universiteit Amsterdam, running Linux Ubuntu 24.04 LTS with Shiny Server and Nginx.
 
-The application can also be run locally using the golem-based framework on which it is built. Periodic updates are required to ensure access to the most recent database and application functionality.
+Users who wish to run the application locally can do so using the golem-based framework on which the app is built.
+
+install.packages("remotes")
+remotes::install_github("HugoGit39/siawd")
+
+After installation, the application can be started with:
+
+siawd::run_app()
+Periodic updates are required to ensure access to the most recent database and application functionality.
 
 # Data Sources and Dependencies
 
