@@ -109,3 +109,5 @@ We thank Myrte Schoenmakers, Melissa Saygin and Artemis Stefani (VU Amsterdam), 
 # Funding
 
 This work is supported by the Stress in Action project (www.stress-in-action.nl), funded by the Dutch Research Council and the Ministry of Education, Culture and Science through the NWO Gravitation programme (grant number 024.005.010).
+
+# References
