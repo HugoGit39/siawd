@@ -1,11 +1,4 @@
 ---
-title: "paper_joss"
-author: "H. Klarenberg, PhD"
-date: "2025-12-22"
-output: html_document
----
-
----
 title: "SiA-WD: An R Shiny Application for Systematic Evaluation of Wearables in Behavioural and Stress Research"
 tags:
   - R
