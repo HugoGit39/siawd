@@ -1,0 +1,111 @@
+---
+title: "paper_joss"
+author: "H. Klarenberg, PhD"
+date: "2025-12-22"
+output: html_document
+---
+
+---
+title: "SiA-WD: An R Shiny Application for Systematic Evaluation of Wearables in Behavioural and Stress Research"
+tags:
+  - R
+  - Shiny
+  - wearables
+  - stress research
+  - reproducibility
+  - open science
+authors:
+  - name: Hugo Klarenberg
+    affiliation: 1
+  - name: Eco de Geus
+    affiliation: 1
+affiliations:
+  - name: Department of Biological Psychology, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands; Amsterdam Public Health Research Institute, Amsterdam UMC, Amsterdam, The Netherlands
+date: 2025
+---
+
+# Summary
+
+SiA-WD is an open-source R Shiny application for selecting physiological wearables from the Stress in Action Wearables Database (SiA-WD) in behavioural and stress research. Based on peer-reviewed research by Schoenmakers et al. (2025), the SiA-WD enables users to explore and compare an extensive range of devices using two modules: a Product Filter for side-by-side comparisons and a Feature Filter including 43 filter options allowing detailed selection based on 6 categories: SiA Expert Scores, General Device Information, Technical Specifications, Signals Measured, Data Access and Validation, Reliability, Validity & Usability. Maintained by SiA and supported by community contributions, the database will be continuously updated with new devices throughout the next decade. The SiA-WD application improves transparency, reproducibility and efficiency in device selection and is freely accessible at https://wearables.stress-in-action.nl or can be run locally as a golem-based Shiny application.
+
+# Statement of need
+
+Ambulatory wearable devices are widely used across psychology, medicine, and behavioural science to monitor physiological signals in daily life. These devices allow continuous measurement of activity, heart rate, skin conductance and more. While this technology has advanced rapidly, researchers face growing challenges in selecting appropriate wearables for stress research.
+
+Device selection often involves manually comparing technical specifications, recorded signals and the scientific literature on validity, reliability, and usability: an effort-intensive and error-prone process. Existing reviews and online listings are typically static, incomplete, outdated or focused on consumer markets rather than scientific needs.
+
+To address these limitations, Schoenmakers et al. (2025) developed the Stress in Action Wearables Database (SiA-WD): a curated, open-access resource designed to support evidence-based selection of physiological wearables in behavioral and stress research. The database is based on a peer-reviewed publication in *Behavior Research Methods* and is openly available via the Open Science Framework (https://osf.io/umgvp/). It includes detailed device metadata, systematic literature reviews and expert scores covering over 100 devices relevant to stress-related physiology. The database will be updated for the next decade (2023–2033).
+
+Delivered through an interactive R Shiny application, the tool allows users to explore, filter and compare devices. Unlike static summaries, this dynamic interface enables flexible and reproducible workflows for planning research studies, selecting devices for cohorts or preparing grant proposals.
+
+By reducing the effort required to make informed device choices, SiA-WD empowers researchers to prioritize methodological rigor and transparency in stress-related physiological research.
+
+# Overview
+
+The Shiny application provides two complementary modes of exploration: Product Comparison and Feature-Based Filtering, plus a Submit section where users can suggest new wearables to be added or existing data to be updated.
+
+## Product Filter
+
+The Product Filter module allows users to compare up to three wearable devices side by side. Each product is selected in two steps: choosing a manufacturer, followed by selecting a model associated with that manufacturer. Once one or more products are selected, the app generates a transposed comparison table in which rows display device features and columns correspond to the selected devices. This layout enables direct, feature-by-feature comparison of general specifications, recorded signals, usability ratings, and validation data.
+
+Users may optionally clear a selected device using the Reset Filter button or export the current comparison table using the Download Filtered Products button.
+
+Figure 1 – Overview of the Product Filter with output based on three selected manufacturers and models.
+
+## Feature Filter
+
+The Feature Filter provides a more exploratory approach. Researchers can filter the database using up to 41 different variables, grouped into six thematic categories. The filters are modular and interactively update to ensure only valid combinations are selectable.
+
+**SiA Expert Score**  
+Long-term score and short-term score; exclusion of devices with missing scores.
+
+**General Device Information**  
+Manufacturer, model, release year, market status; intended use, cost, device type and wear location.
+
+**Technical Specifications**  
+Water resistance, battery life, charging duration; bio-cueing and biofeedback support.
+
+**Signals Measured**  
+Accelerometer, blood pressure, electrocardiography (ECG), electrodermal activity (EDA), electroencephalography (EEG), electromyography (EMG), global positioning system (GPS), gyroscope, impedance cardiography (ICG), photoplethysmography (PPG), respiration, skin temperature and other measured signals.
+
+**Data Access**  
+Raw data availability, internal and server-based storage, and storage capacity (MB and hours); general data protection regulation (GDPR) compliance, conformité européenne (CE) marking and food and drug administration (FDA) clearance.
+
+**Reliability, Validation & Usability**  
+Number of studies, validation levels and usability ratings.
+
+Figure 2 – Results of the Feature Filter with a Long-Term SiA score ≥ 7, excluding devices with missing Long- and Short-Term SiA scores.
+
+The app’s backend logic dynamically filters and updates all input fields so that the current selection state is always coherent with the dataset. This prevents incompatible or missing-value combinations and guarantees a smooth, data-consistent filtering experience. For each device, more granular information from the full SiA-WD database can be accessed by clicking the “More Details” button in the Details column.
+
+At any point, users can download the filtered result table for reporting or documentation and export the current filter settings for reproducibility.
+
+## Submit
+
+Community contributions are encouraged through a Submit section that enables users to add new wearable devices or suggest updates to existing entries. The submission interface mirrors the structure of the Feature Filter and guides contributors through a structured form organized into the same six categories. Submitted entries are reviewed by the SiA-WD team prior to publication.
+
+Figure 3 – Submission form showing all mandatory fields completed, enabling submission.
+
+# Deployment
+
+The SiA-WD Shiny application is deployed as a publicly accessible web-based tool at https://wearables.stress-in-action.nl. The application is hosted on a dedicated virtual machine maintained by Vrije Universiteit Amsterdam, running Linux Ubuntu 24.04 LTS, Shiny Server, and Nginx.
+
+The application can also be run locally using the golem-based framework on which it is built. After installation from the public GitHub repository, the application can be launched within an R environment. Periodic updates are required to ensure access to the most recent database and application functionality.
+
+# Data sources and dependencies
+
+The SiA-WD database is generated through a reproducible relational data pipeline implemented in a public GitHub repository (https://github.com/HugoGit39/sia.project.1.wd.data). The pipeline follows the methodological framework described in Schoenmakers et al. (2025) and applies reproducible research principles for relational database construction.
+
+Figure 4 – Overview of the SiA-WD relational data pipeline: (1) source data frames linked by device key identifiers; (2) relational merging of source tables; (3) generation of Shiny-ready data frames (RDS) and OSF-compatible data frames (Excel); (4) construction of the SiA-WD Shiny applications (live and local golem-based versions); and (5) public publication.
+
+In line with open science principles, curated exports of the SiA-WD database are publicly disseminated via the Open Science Framework and are available at https://osf.io/umgvp/.
+
+The accompanying Shiny application was built under R version 4.4.1 and relies on open-source R packages available via CRAN or GitHub.
+
+# Acknowledgements
+
+We thank Myrte Schoenmakers, Melissa Saygin and Artemis Stefani (VU Amsterdam), and Magdalena Sikora and Matthijs Noordzij (University of Twente) for user experience input and testing of SiA-WD.
+
+# Funding
+
+This work is supported by the Stress in Action project (www.stress-in-action.nl), funded by the Dutch Research Council and the Ministry of Education, Culture and Science through the NWO Gravitation programme (grant number 024.005.010).
