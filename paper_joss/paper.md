@@ -100,8 +100,6 @@ The SiA-WD database is generated through a reproducible relational data pipeline
 
 Figure 4 – Overview of the SiA-WD relational data pipeline: (1) source data frames linked by device key identifiers; (2) relational merging of source tables; (3) generation of Shiny-ready data frames (RDS) and OSF-compatible data frames (Excel); (4) construction of the SiA-WD Shiny applications (live and local golem-based versions); and (5) public publication.
 
-![Figure 4 – Overview of the SiA-WD relational data pipeline: (1) source data frames linked by device key identifiers; (2) relational merging of source tables; (3) generation of Shiny-ready data frames (RDS) and OSF-compatible data frames (Excel); (4) construction of the SiA-WD Shiny applications (live and local golem-based versions); and (5) public publication.](figure_4.png){ width=50% }
-
 In line with open science principles, curated exports of the SiA-WD database are publicly disseminated via the Open Science Framework and are available at https://osf.io/umgvp/.
 
 The accompanying Shiny application was built under R version 4.4.1 and relies on open-source R packages available via CRAN or GitHub.
