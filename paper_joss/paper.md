@@ -44,9 +44,7 @@ The Product Filter module allows users to compare up to three wearable devices s
 
 Users may optionally clear a selected device using the Reset Filter button or export the current comparison table using the Download Filtered Products button.
 
-![](figure_1.png)
-
-Figure 1 – Overview of the Product Filter with output based on three selected manufacturers and models.
+![Figure 1 – Overview of the Product Filter with output based on three selected manufacturers and models.](figure_1.png)
 
 ## Feature Filter
 
@@ -70,9 +68,7 @@ Raw data availability, internal and server-based storage, and storage capacity (
 **Reliability, Validation & Usability**  
 Number of studies, validation levels and usability ratings.
 
-![](figure_2.png)
-
-Figure 2 – Results of the Feature Filter with a Long-Term SiA score ≥ 7, excluding devices with missing Long- and Short-Term SiA scores.
+![Figure 2 – Results of the Feature Filter with a Long-Term SiA score ≥ 7, excluding devices with missing Long- and Short-Term SiA scores.](figure_2.png)
 
 The app’s backend logic dynamically filters and updates all input fields so that the current selection state is always coherent with the dataset. This prevents incompatible or missing-value combinations and guarantees a smooth, data-consistent filtering experience. For each device, more granular information from the full SiA-WD database can be accessed by clicking the “More Details” button in the Details column.
 
@@ -82,9 +78,7 @@ At any point, users can download the filtered result table for reporting or docu
 
 Community contributions are encouraged through a Submit section that enables users to add new wearable devices or suggest updates to existing entries. The submission interface mirrors the structure of the Feature Filter and guides contributors through a structured form organized into the same six categories. Submitted entries are reviewed by the SiA-WD team prior to publication.
 
-![](figure_3.png)
-
-Figure 3 – Submission form showing all mandatory fields completed, enabling submission.
+![Figure 3 – Submission form showing all mandatory fields completed, enabling submission.](figure_3.png)
 
 # Deployment
 
@@ -96,9 +90,7 @@ The application can also be run locally using the golem-based framework on which
 
 The SiA-WD database is generated through a reproducible relational data pipeline implemented in a public GitHub repository (https://github.com/HugoGit39/sia.project.1.wd.data). The pipeline follows the methodological framework described in Schoenmakers et al. (2025) and applies reproducible research principles for relational database construction.
 
-![](figure_4.png)
-
-Figure 4 – Overview of the SiA-WD relational data pipeline: (1) source data frames linked by device key identifiers; (2) relational merging of source tables; (3) generation of Shiny-ready data frames (RDS) and OSF-compatible data frames (Excel); (4) construction of the SiA-WD Shiny applications (live and local golem-based versions); and (5) public publication.
+![Figure 4 – Overview of the SiA-WD relational data pipeline: (1) source data frames linked by device key identifiers; (2) relational merging of source tables; (3) generation of Shiny-ready data frames (RDS) and OSF-compatible data frames (Excel); (4) construction of the SiA-WD Shiny applications (live and local golem-based versions); and (5) public publication.](figure_4.png){ width=50% }
 
 In line with open science principles, curated exports of the SiA-WD database are publicly disseminated via the Open Science Framework and are available at https://osf.io/umgvp/.
 
