@@ -9,18 +9,19 @@
 #' @keywords internal
 #' @noRd
 
+#function to pre-fill choices
 text_or_selectize <- function(inputId, label, df, col) {
   vals <- sort(unique(na.omit(df[[col]])))
   selectizeInput(
     inputId,
     label,
     choices = vals,
-    selected = "",  # nothing preselected
+    selected = "",
     multiple = FALSE,
     options = list(
-      create = TRUE,             # allows free text input
+      create = TRUE,
       placeholder = "Click for options or type + press Enter",
-      onInitialize = I('function() { this.clear(); }')  # ensure starts empty
+      onInitialize = I('function() { this.clear(); }')
     )
   )
 }

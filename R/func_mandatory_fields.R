@@ -17,6 +17,7 @@ labelMandatory <- function(label) {
   )
 }
 
+# function to check mandatory fields
 mandatoryfields_check <- function(fields, input) {
   vapply(fields, function(x) {
     value <- input[[x]]

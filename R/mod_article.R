@@ -94,8 +94,6 @@ mod_article_ui <- function(id) {
                     class = "fa-lg",
                     style = "color: #1c75bc;"
                   ),
-
-                  # ---- SHORT-TERM ----
                   strong("Short-term importance of criteria", style = "color:#000000;"), br(),
                   reactable::reactable(
                     data.frame(
@@ -162,10 +160,7 @@ mod_article_ui <- function(id) {
                       borderColor     = "#D9D9D9"
                     )
                   ),
-
                   br(),
-
-                  # ---- LONG-TERM ----
                   strong("Long-term importance of criteria", style = "color:#000000;"), br(),
                   reactable(
                     data.frame(
@@ -277,7 +272,7 @@ mod_article_ui <- function(id) {
               target = "_blank",
               img(
                 src = "www/springer_link.png",
-                height = "40px",  # adjust size as needed
+                height = "40px",
                 alt = "Springer Link"
               )
             )

@@ -14,7 +14,6 @@ mod_prod_fil_ui <- function(id) {
 
   tagList(
     fluidRow(
-      # ---------------- LEFT FILTER PANEL ----------------
       column(
         width = 3,
         bs4Card(
@@ -23,16 +22,12 @@ mod_prod_fil_ui <- function(id) {
           width = 12,
           collapsible = FALSE,
           solidHeader = TRUE,
-
-          # --- Product 1 (always prefilled) ---
           selectInput(
             ns("product1"), "Product 1: Manufacturer",
             choices = sort(unique(df_sia_shiny_filters$manufacturer)),
             selected = "Apple"
           ),
           selectInput(ns("model1"), "Product 1: Model", choices = NULL),
-
-          # --- Reset Product 2 & 3 ---
           div(
             style = "text-align: center; margin-bottom: 10px;",
             actionButton(
@@ -48,16 +43,12 @@ mod_prod_fil_ui <- function(id) {
               style = "border-width: 2px"
             )
           ),
-
-          # --- Product 2 (user selects) ---
           selectInput(
             ns("product2"), "Product 2: Manufacturer",
             choices  = c("Choose a product" = "", sort(unique(df_sia_shiny_filters$manufacturer))),
             selected = ""
           ),
           selectInput(ns("model2"), "Product 2: Model", choices = NULL),
-
-          # --- Product 3 (unlocked after Model 2) ---
           selectInput(
             ns("product3"), "Product 3: Manufacturer",
             choices  = c("Choose a product" = "", sort(unique(df_sia_shiny_filters$manufacturer))),
@@ -66,8 +57,6 @@ mod_prod_fil_ui <- function(id) {
           selectInput(ns("model3"), "Product 3: Model", choices = NULL)
         )
       ),
-
-      # ---------------- RIGHT RESULTS PANEL ----------------
       column(
         width = 9,
         bs4Card(
@@ -76,8 +65,6 @@ mod_prod_fil_ui <- function(id) {
           width = 12,
           collapsible = FALSE,
           solidHeader = TRUE,
-
-          # --- Glossary Info + Download Button ----
           div(
             style = "display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;",
             actionButton(
@@ -130,16 +117,13 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
-    # dummy values to force-reset selectInputs
     dummy_model2 <- "__dummy_model2__"
     dummy_model3 <- "__dummy_model3__"
 
-    # ---------- INITIAL DISABLE STATE ----------
     disable("model2")
     disable("product3")
     disable("model3")
 
-    # ---------------- PRODUCT 1 ----------------
     observeEvent(input$product1, {
       df <- df_sia_shiny_filters()
       m_choices <- sort(unique(df$model[df$manufacturer == input$product1]))
@@ -151,7 +135,6 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
       }
     }, ignoreInit = FALSE)
 
-    # ---------------- PRODUCT 2 ----------------
     observeEvent(input$product2, {
       df <- df_sia_shiny_filters()
 
@@ -163,23 +146,20 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
         updateSelectInput(session, "product3", selected = "")
         updateSelectInput(session, "model3", choices = character(0), selected = "")
       } else {
-        # 1) force-drop any old model2 value by using a dummy choice
         updateSelectInput(
           session, "model2",
           choices  = c("Resetting…" = dummy_model2),
           selected = dummy_model2
         )
 
-        # 2) now set real choices with empty selection
         enable("model2")
         m2_choices <- sort(unique(df$model[df$manufacturer == input$product2]))
         updateSelectInput(
           session, "model2",
           choices  = c("Choose a model" = "", m2_choices),
-          selected = ""   # user must choose manually
+          selected = ""
         )
 
-        # ensure product3 is reset/disabled
         disable("product3")
         disable("model3")
         updateSelectInput(session, "product3", selected = "")
@@ -187,13 +167,9 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
       }
     })
 
-    # ---------------- MODEL 2 ----------------
     observeEvent(input$model2, {
-      # ignore the internal dummy value used during reset
       if (identical(input$model2, dummy_model2)) return()
-
       if (!is.null(input$model2) && nzchar(input$model2)) {
-        # now user really chose a model -> unlock product3
         enable("product3")
       } else {
         disable("product3")
@@ -203,14 +179,12 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
       }
     })
 
-    # ---------------- PRODUCT 3 ----------------
     observeEvent(input$product3, {
       df <- df_sia_shiny_filters()
       if (is.null(input$product3) || input$product3 == "" || input$product3 == "None") {
         disable("model3")
         updateSelectInput(session, "model3", choices = character(0), selected = "")
       } else {
-        # same dummy trick for model3 to avoid sticky values if you ever change product3
         updateSelectInput(
           session, "model3",
           choices  = c("Resetting…" = dummy_model3),
@@ -227,21 +201,15 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
       }
     })
 
-    # ---------------- MODEL 3 ----------------
     observeEvent(input$model3, {
-      # ignore dummy internal reset value
       if (identical(input$model3, dummy_model3)) return()
-
       if (!is.null(input$model3) && nzchar(input$model3)) {
-        # nothing extra to unlock here, but you could add logic later
         invisible(NULL)
       } else {
-        # model3 cleared
         invisible(NULL)
       }
     })
 
-    # ---------------- REACTIVE SELECTED PRODUCTS ----------------
     selected_products <- reactive({
       df <- df_sia_shiny_filters()
       rows <- list()
@@ -264,7 +232,6 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
       dplyr::bind_rows(rows) %>% dplyr::distinct(manufacturer, model, .keep_all = TRUE)
     })
 
-    # ---------------- RENDER TABLE ----------------
     output$prod_filtered_table <- renderReactable({
       df <- selected_products()
       if (nrow(df) == 0) {
@@ -342,21 +309,17 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
       )
     })
 
-    # ---------------- RESET ----------------
     observeEvent(input$reset_prod_filter, {
-      # Reset Product 2 + Model 2
       updateSelectInput(session, "product2", selected = "")
       updateSelectInput(session, "model2", choices = character(0), selected = "")
       disable("model2")
 
-      # Reset Product 3 + Model 3
       updateSelectInput(session, "product3", selected = "")
       updateSelectInput(session, "model3", choices = character(0), selected = "")
       disable("product3")
       disable("model3")
     })
 
-    # ---------------- DOWNLOAD ----------------
     output$download_data <- downloadHandler(
       filename = function() {
         paste0("sia_product_filter_data_", format(Sys.Date(), "%Y%m%d"), ".xlsx")

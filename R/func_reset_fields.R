@@ -31,7 +31,6 @@ reset_inputs_sub_data <- function(session, input) {
     }
   }
 
-  # reset the YES/NO switch
   updateSwitchInput(session, "draft_ok", value = FALSE)
   disable("draft_ok")
 }
@@ -44,7 +43,6 @@ reset_inputs_contact <- function(session) {
   updateTextInput(session, "institution", value = "")
   updateTextAreaInput(session, "message", value = "")
 
-  # Make sure the button is off again until fields are valid
   disable("submit_email")
 }
 

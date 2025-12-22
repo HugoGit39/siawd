@@ -9,6 +9,7 @@
 #' @keywords internal
 #' @noRd
 
+#bars
 func_bar_row_defs <- function(value, index, feature_vec, bar_vars, rename_map) {
   original_var <- names(rename_map)[match(feature_vec[index], rename_map)]
   if (is.null(original_var) || !(original_var %in% bar_vars)) return(value)

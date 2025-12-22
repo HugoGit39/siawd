@@ -52,7 +52,7 @@ mod_footer_ui <- function(id) {
         )
       ),
       right = tagList(
-        span("© 2025–2035 Stress in Action |", style = "color:#1c75bc;"),
+        span("© 2023–2033 Stress in Action |", style = "color:#1c75bc;"),
         a(
           href   = "https://creativecommons.org/licenses/by-nc-nd/4.0/",
           target = "_blank",

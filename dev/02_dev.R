@@ -18,6 +18,9 @@
 ## install.packages('attachment') # if needed.
 attachment::att_amend_desc()
 
+## Global startup file ----
+usethis::use_template("global.R", save_as = "global.R", open = FALSE)
+
 ## Add modules ----
 ## Create a module infrastructure in R/
 golem::add_module(name = "header", with_test = FALSE)

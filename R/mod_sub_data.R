@@ -14,9 +14,6 @@ mod_sub_data_ui <- function(id) {
 
   tagList(
     fluidRow(
-      # -------------------------------------------------------------------
-      # 1. DRAFT FORM COLUMN
-      # -------------------------------------------------------------------
       column(
         width = 4,
         div(
@@ -41,8 +38,6 @@ mod_sub_data_ui <- function(id) {
               )
             ),
             textOutput(ns("status")),
-
-            # ---------------- Your Information ----------------
             bs4Card(
               title = "Your Information",
               status = "secondary",
@@ -54,8 +49,6 @@ mod_sub_data_ui <- function(id) {
               textInput(ns("telephone"), "Telephone"),
               textInput(ns("institution"), "Institution")
             ),
-
-            # ---------------- General Device Information ----------------
             bs4Card(
               title = "General Device Information",
               status = "secondary",
@@ -74,8 +67,6 @@ mod_sub_data_ui <- function(id) {
               numericInput(ns("weight_gr"), "Weight (gr)", value = NA),
               textInput(ns("size_mm"), "Size (mm)", placeholder = "Click and write LxWxH or DxH (mm)")
             ),
-
-            # ---------------- Technical Specifications ----------------
             bs4Card(
               title = "Technical Specifications",
               status = "secondary",
@@ -87,8 +78,6 @@ mod_sub_data_ui <- function(id) {
               checkboxInput(ns("bio_cueing_spec_boel_value"), "Bio Cueing", value = FALSE),
               checkboxInput(ns("bio_feedback_spec_boel_value"), "Bio Feedback", value = FALSE)
             ),
-
-            # ---------------- Signals ----------------
             bs4Card(
               title = "Signals",
               status = "secondary",
@@ -107,8 +96,6 @@ mod_sub_data_ui <- function(id) {
               checkboxInput(ns("respiration_available"), "Respiration", value = FALSE),
               checkboxInput(ns("skin_temperature_available"), "Skin Temperature", value = FALSE)
             ),
-
-            # ---------------- Data Access ----------------
             bs4Card(
               title = "Data Access",
               status = "secondary",
@@ -123,8 +110,6 @@ mod_sub_data_ui <- function(id) {
               checkboxInput(ns("fda_clearance_spec_boel_value"), "FDA Cleared", value = FALSE),
               checkboxInput(ns("ce_marking_spec_boel_value"), "CE Marked", value = FALSE)
             ),
-
-            # ---------------- Validation, Reliability & Usability ----------------
             bs4Card(
               title = "Validation, Reliability & Usability",
               status = "secondary",
@@ -135,8 +120,6 @@ mod_sub_data_ui <- function(id) {
               text_or_selectize(ns("usability_evidence_level"), "Usability Evidence Level", df_sia_shiny_filters, "usability_evidence_level"),
               text_or_selectize(ns("validity_and_reliability_evidence_level"), "Validity & Reliability Evidence Level", df_sia_shiny_filters, "validity_and_reliability_evidence_level")
             ),
-
-            # ---------------- Further Details ----------------
             bs4Card(
               title = "Further Details",
               status = "secondary",
@@ -156,7 +139,7 @@ mod_sub_data_ui <- function(id) {
                     outline = TRUE,
                     size    = "sm",
                     flat    = TRUE,
-                    width   = NULL,              # no fixed width → just fits 'Details'
+                    width   = NULL,
                     class   = "addinfo-info-btn",
                     style   = "border-width: 2px;"
                   )
@@ -173,10 +156,6 @@ mod_sub_data_ui <- function(id) {
           )
         )
       ),
-
-      # -------------------------------------------------------------------
-      # 2. CHECK DRAFT FORM COLUMN
-      # -------------------------------------------------------------------
       column(
         width = 4,
         div(
@@ -217,10 +196,6 @@ mod_sub_data_ui <- function(id) {
           )
         )
       ),
-
-      # -------------------------------------------------------------------
-      # 3. SEND FINAL FORM COLUMN
-      # -------------------------------------------------------------------
       column(
         width = 4,
         bs4Card(
@@ -260,7 +235,6 @@ mod_sub_data__server <- function(id) {
 
     last_submission <- reactiveVal(NULL)
 
-    # --- validation and inline errors (email only) ---
     output$email_error <- renderUI({
       v <- input$email
       if (is.null(v) || !nzchar(v)) return(NULL)
@@ -268,7 +242,6 @@ mod_sub_data__server <- function(id) {
         div(style = "color:#CC6677; font-size:12px;", strong("Email must contain '@' (e.g., name@example.com)."))
     })
 
-    # --- validate mandatory fields ---
     observe({
       valid_form <- mandatoryfields_check(fieldsMandatory_data, input)
       toggleState("draft_ok", condition = valid_form)
@@ -276,7 +249,6 @@ mod_sub_data__server <- function(id) {
         updateSwitchInput(session, "draft_ok", value = FALSE)
     })
 
-    # --- reactive builder for the form ---
     build_form <- reactive({
       data.frame(
         Variable = rename_subm,
@@ -292,18 +264,14 @@ mod_sub_data__server <- function(id) {
       )
     })
 
-    # --- table preview ---
     output$draft_table <- renderReactable({
       df <- build_form()
 
-      # remove internal-only variables
       exclude_vars <- c("details", "long_term_all_score", "short_term_all_score", "other_signals_available")
       df <- df[!df$Variable %in% exclude_vars, ]
 
-      # rename display names
       df$DisplayName <- ifelse(df$Variable %in% names(rename_map), rename_map[df$Variable], df$Variable)
 
-      # capitalize core user fields for display
       df$DisplayName <- recode(
         df$DisplayName,
         "name" = "Name",
@@ -339,7 +307,6 @@ mod_sub_data__server <- function(id) {
       )
     })
 
-    # --- download + submit logic (now Excel only) ---
     output$dl_xlsx_submit <- downloadHandler(
       filename = function() {
         paste0("sia_data_submission", ".xlsx")
@@ -355,24 +322,20 @@ mod_sub_data__server <- function(id) {
 
     observe({ toggleState("submit_final", condition = isTRUE(input$draft_ok)) })
 
-    # --- submission event (send + reset) ---
     observeEvent(input$submit_final, {
       df <- build_form()
       last_submission(df)
 
-      # 1) still create a temp Excel file (for the download handler)
       excel_path <- file.path(
         tempdir(),
         paste0("sia_data_submission_", input$email, "_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
       )
       write_xlsx(list("Submission" = df), path = excel_path)
 
-      # 2) trigger the browser download of the Excel
       session$onFlushed(function() {
         runjs(sprintf("document.getElementById('%s').click();", ns("dl_xlsx_submit")))
       }, once = TRUE)
 
-      # 3) open the user's default mail client with mailto:
       to_address <- "disc@stress-in-action.nl"
       subject <- sprintf("SiA Wearables Data Submission – %s", input$email)
 

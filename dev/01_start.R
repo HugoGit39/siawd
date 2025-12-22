@@ -71,7 +71,7 @@ usethis::use_git_remote(
 #Packages
 pkgs <- c(
   "shiny", "bs4Dash", "fresh", "dplyr", "rlang", "scales", "lubridate",
-  "shinySearchbar", "emayili", "shinyjs", "sever", "shinycssloaders",
+  "shinySearchbar", "shinyjs", "sever", "shinycssloaders",
   "shinyWidgets", "reactablefmtr", "reactable", "htmltools",
   "htmlwidgets", "writexl"
 )

@@ -35,7 +35,6 @@ mod_contact_ui <- function(id) {
                        textInput(ns("institution"), "Institution"),
                        textAreaInput(ns("message"), labelMandatory("Message"), ""),
 
-                       # Submit button (starts disabled)
                        actionButton(ns("submit_email"), "Submit", disabled = TRUE)
                      )
              )
@@ -61,15 +60,13 @@ mod_contact_server <- function(id) {
       }
     })
 
-    # Enable/disable button
     observe({
       toggleState(id = "submit_email", condition = mandatoryfields_check(fieldsMandatory_email, input))
     })
 
-    # When Submit button is clicked
     observeEvent(input$submit_email, {
-      # Prepare message components
-      to_address <- "disc@stress-in-action.nl"  # replace with your public contact email
+
+      to_address <- "disc@stress-in-action.nl"
       subject <- "Wearable Database App message"
 
       body <- paste(
@@ -80,20 +77,16 @@ mod_contact_server <- function(id) {
         "\n\nMessage:\n", input$message
       )
 
-      # Encode components for mailto URL
       mailto_url <- paste0(
         "mailto:", to_address,
         "?subject=", URLencode(subject, reserved = TRUE),
         "&body=", URLencode(body, reserved = TRUE)
       )
 
-      # Open default mail client
       runjs(sprintf("window.location.href = '%s';", mailto_url))
 
-      # Optional: small confirmation message
       showNotification("Opening your email client…", type = "message")
 
-      # Reset fields
       reset_inputs_contact(session)
     })
   })

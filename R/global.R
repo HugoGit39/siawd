@@ -1,5 +1,13 @@
-# global_data.R
-# Initialize data & constants used across the app
+############################################################################################
+#
+# Global file
+#
+# Stress in Action 2025
+#
+# Author: H. Klarenberg, PhD
+# Email: h.klarenberg@vu.nl
+#
+#############################################################################################
 
 # 1. Load .Renviron (optional) --------------------------------------------
 

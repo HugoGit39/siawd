@@ -46,8 +46,6 @@ mod_feat_fil_ui <- function(id) {
                 style = "border-width: 2px"
               )
             ),
-
-            # * SiA Expert Scores ----
             bs4Card(
               title = "SiA Expert Score",
               width = 12,
@@ -80,8 +78,6 @@ mod_feat_fil_ui <- function(id) {
                 )
               )
             ),
-
-            # * General Device Information ----
             bs4Card(
               title = "General Device Information",
               width = 12,
@@ -114,8 +110,6 @@ mod_feat_fil_ui <- function(id) {
               selectInput(ns("wearable_type"), "Type", choices = NULL, multiple = TRUE),
               selectInput(ns("location"), "Location", choices = NULL, multiple = TRUE)
             ),
-
-            # * Technical Specifications ----
             bs4Card(
               title = "Technical Specifications",
               width = 12,
@@ -141,8 +135,6 @@ mod_feat_fil_ui <- function(id) {
               prettyCheckbox(ns("bio_cueing_spec_boel_value"), label = "Bio Cueing", icon = icon("check"), status = "primary"),
               prettyCheckbox(ns("bio_feedback_spec_boel_value"), label = "Bio Feedback", icon = icon("check"), status = "primary")
             ),
-
-            # * Signals ----
             bs4Card(
               title = "Signals",
               width = 12,
@@ -162,8 +154,6 @@ mod_feat_fil_ui <- function(id) {
               prettyCheckbox(ns("skin_temperature_available"), label = "Skin Temperature", icon = icon("check"), status = "primary"),
               prettyCheckbox(ns("other_signals_available"), label = "Other Signals", icon = icon("check"), status = "primary")
             ),
-
-            # * Data Access ----
             bs4Card(
               title = "Data Access",
               width = 12,
@@ -192,8 +182,6 @@ mod_feat_fil_ui <- function(id) {
               prettyCheckbox(ns("fda_clearance_spec_boel_value"), label = "FDA Cleared", icon = icon("check"), status = "primary"),
               prettyCheckbox(ns("ce_marking_spec_boel_value"), label = "CE Marked", icon = icon("check"), status = "primary")
             ),
-
-            # * Validation, Reliability & Usability ----
             bs4Card(
               title = "Reliability, Validity & Usability",
               width = 12,
@@ -277,24 +265,17 @@ mod_feat_fil_server <- function(id, data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
-    # Columns that live in df_sia_shiny_info (everything except device_id)
     info_cols <- setdiff(names(df_sia_shiny_info),c("device_id"))
-
-    # --- 1. Variable groups (reuse from global.R) ----
     range_vars   <- setdiff(c(bar_vars, numeric_vars), "weight_gr")
     checkbox_vars <- yn_vars
     select_inputs <- setdiff(intersect(names(df_sia_shiny_filters), char_vars), c("release_year", "size_mm"))
 
-    # --- 2. Filter for dropdowns ----
     filtered_for_dropdowns <- reactive({
       df <- data()
-
-      # Apply range filters
       for (var in range_vars) {
         df <- range_filter(df, var, input[[var]])
       }
 
-      # Release year range
       if (!is.null(input$release_year[1]) && !is.null(input$release_year[2])) {
         df <- df %>%
           filter(
@@ -304,12 +285,10 @@ mod_feat_fil_server <- function(id, data) {
           )
       }
 
-      # Apply checkboxes
       for (var in checkbox_vars) {
         df <- checkbox_filter(df, var, input[[var]])
       }
 
-      # Exclude missing SiA scores if needed
       if (isTRUE(input$exclude_na_sia)) {
         df <- df %>%
           filter(!is.na(short_term_all_score), !is.na(long_term_all_score))
@@ -318,7 +297,6 @@ mod_feat_fil_server <- function(id, data) {
       df
     })
 
-    # --- 3. Dynamically update selectInput options ----
     observe({
       df <- filtered_for_dropdowns()
       for (input_id in select_inputs) {
@@ -339,7 +317,6 @@ mod_feat_fil_server <- function(id, data) {
       }
     })
 
-    # --- 4. Apply full filtering ----
     filtered_data <- reactive({
       df <- filtered_for_dropdowns()
       for (var in select_inputs) {
@@ -348,7 +325,6 @@ mod_feat_fil_server <- function(id, data) {
       df
     })
 
-    # --- 5. Reset filters ----
     observeEvent(input$reset_feat_filter, {
       for (var in range_vars) {
         if (var %in% c("long_term_all_score", "short_term_all_score")) {
@@ -369,23 +345,17 @@ mod_feat_fil_server <- function(id, data) {
       updateSwitchInput(session, "exclude_na_sia", value = FALSE)
     })
 
-    # --- 6. Render filtered reactable ----
     output$feat_filtered_table <- renderReactable({
 
-      # 1) Start from filtered filter-table data
       df <- filtered_data()
 
-      # 2) Merge in info columns by device_id (now df has BOTH filter + info cols)
       df <- df %>%
         left_join(df_sia_shiny_info, by = "device_id")
 
-      # 3) Format release year if present
       df$release_year <- format(df$release_year, "%Y")
 
-      # 4) Add the 'details' column for the button
       df$details <- NA_character_
 
-      # 5) Reorder columns: manufacturer, model, details first
       front_cols <- c(
         "manufacturer",
         "model",
@@ -397,24 +367,20 @@ mod_feat_fil_server <- function(id, data) {
       other_cols <- setdiff(names(df), front_cols)
       df <- df[, c(front_cols, other_cols)]
 
-      # 6) Column definitions from your existing helpers (only for filter cols)
       bar_column_defs     <- func_bar_column_defs(df, bar_vars, rename_map)
       yn_column_defs      <- func_yn_column_defs(yn_vars, rename_map)
       numeric_column_defs <- func_numeric_column_defs(df, numeric_vars, rename_map, numeric_var_ranges)
       char_column_defs    <- func_char_column_defs(char_vars, rename_map)
 
-      # 7) Hide the info columns in the table (but keep them in rowInfo.values)
       info_column_defs <- lapply(info_cols, function(x) colDef(show = FALSE))
       names(info_column_defs) <- info_cols
 
-      # Build JS array of info column names for popup
       info_cols_js <- paste0("['", paste(info_cols, collapse = "','"), "']")
 
       reactable(
         df,
         columns = c(
           list(
-            # hide device_id but keep for popup use
             device_id = colDef(show = FALSE),
 
             manufacturer = colDef(
@@ -462,7 +428,7 @@ mod_feat_fil_server <- function(id, data) {
           yn_column_defs,
           numeric_column_defs,
           char_column_defs,
-          info_column_defs   # hidden info columns
+          info_column_defs
         ),
         bordered      = TRUE,
         highlight     = TRUE,
@@ -481,7 +447,6 @@ mod_feat_fil_server <- function(id, data) {
         ),
         style         = list(maxHeight = "1000px", overflowY = "auto"),
 
-        # --- Custom click handler for popup details ---
         onClick = JS(sprintf("
   function(rowInfo, column) {
     if (column.id !== 'details') return;
@@ -603,26 +568,21 @@ mod_feat_fil_server <- function(id, data) {
       )
     })
 
-    # --- 10. Download filtered results (Excel) ----
     output$download_data <- downloadHandler(
       filename = function() {
         paste0("sia_feature_filter_data_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
       },
       content = function(file) {
-        # Get selected device IDs from the filtered data
         selected_ids <- filtered_data()$device_id
 
-        # Export full OSF data for those devices
         export_df <- df_sia_osf %>%
           filter(device_id %in% selected_ids) %>%
           as.data.frame()
 
-        # Format release year if present
         if ("release_year" %in% names(export_df)) {
           export_df$release_year <- format(export_df$release_year, "%Y")
         }
 
-        # Write Excel with all tabs
         write_xlsx(
           list(
             "Selected Devices" = export_df,
@@ -635,8 +595,6 @@ mod_feat_fil_server <- function(id, data) {
       contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 
-
-    # --- 11. Download filter settings (Excel) ----
     output$download_filter_settings <- downloadHandler(
       filename = function() {
         paste0("sia_filter_settings_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
@@ -644,33 +602,27 @@ mod_feat_fil_server <- function(id, data) {
       content = function(file) {
         settings <- list()
 
-        # Sliders: store "min;max"
         for (var in range_vars) {
           range_vals <- as.integer(round(input[[var]]))
           settings[[var]] <- paste(range_vals[1], range_vals[2], sep = ";")
         }
 
-        # Checkboxes: "YES" if selected, "YES;NO" if not (no restriction)
         for (var in checkbox_vars) {
           settings[[var]] <- if (isTRUE(input[[var]])) "yes" else "yes;no"
         }
 
-        # SelectInputs: chosen values separated by ";"
         for (var in select_inputs) {
           settings[[var]] <- paste(input[[var]], collapse = ";")
         }
 
-        # Release year range (YYYY;YYYY)
         settings[["release_year"]] <- paste(
           format(input$release_year[1], "%Y"),
           format(input$release_year[2], "%Y"),
           sep = ";"
         )
 
-        # Exclude NA SiA (same YES / YES;NO logic)
         settings[["exclude_na_sia"]] <- if (isTRUE(input$exclude_na_sia)) "yes" else "yes;no"
 
-        # Convert list → one-row data.frame
         df_settings <- data.frame(t(unlist(settings)), check.names = FALSE)
         names(df_settings) <- names(settings)
 

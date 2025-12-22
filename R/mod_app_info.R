@@ -99,10 +99,8 @@ mod_app_info_ui <- function(id) {
 
       )
     ),
-
-    # Second fluidRow: User Guide and Updates
     fluidRow(
-      column(width = 1),  # left spacer
+      column(width = 1),
 
       column(
         width = 4,
@@ -159,7 +157,7 @@ mod_app_info_ui <- function(id) {
           )
         )
       ),
-      column(width = 3),  # spacer
+      column(width = 3),
 
       column(
         width = 3,
@@ -178,7 +176,7 @@ mod_app_info_ui <- function(id) {
         )
       ),
 
-      column(width = 1),  # spacer
+      column(width = 1),
     )
   )
 }
