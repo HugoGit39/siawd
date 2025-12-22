@@ -14,7 +14,8 @@ authors:
     affiliation: 1
 affiliations:
   - name: Department of Biological Psychology, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands; Amsterdam Public Health Research Institute, Amsterdam UMC, Amsterdam, The Netherlands
-date: 2025
+date: 22 December 2025
+bibliography: paper.bib
 ---
 
 # Summary
