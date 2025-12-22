@@ -96,7 +96,7 @@ The application can also be run locally using the golem-based framework on which
 
 The SiA-WD database is generated through a reproducible relational data pipeline implemented in a public GitHub repository (https://github.com/HugoGit39/sia.project.1.wd.data). The pipeline follows the methodological framework described in Schoenmakers et al. (2025) and applies reproducible research principles for relational database construction.
 
-![](figure_4.png)v
+![](figure_4.png)
 
 Figure 4 – Overview of the SiA-WD relational data pipeline: (1) source data frames linked by device key identifiers; (2) relational merging of source tables; (3) generation of Shiny-ready data frames (RDS) and OSF-compatible data frames (Excel); (4) construction of the SiA-WD Shiny applications (live and local golem-based versions); and (5) public publication.
 
