@@ -20,15 +20,15 @@ bibliography: paper.bib
 
 # Summary
 
-SiA-WD is an open-source R Shiny application for selecting physiological wearables from the Stress in Action Wearables Database (SiA-WD) in behavioural and stress research. Based on peer-reviewed research by @schoenmakers2025siawd, the SiA-WD enables users to explore and compare an extensive range of devices using two modules: a Product Filter for side-by-side comparisons and a Feature Filter including 43 filter options allowing detailed selection based on six categories: SiA Expert Scores, General Device Information, Technical Specifications, Signals Measured, Data Access and Validation, and Reliability & Usability. Maintained by the Stress in Action consortium and supported by community contributions, the database will be continuously updated throughout the next decade. The SiA-WD application improves transparency, reproducibility, and efficiency in device selection and is freely accessible at https://wearables.stress-in-action.nl or can be run locally as a golem-based Shiny application.
+SiA-WD is an open-source R Shiny application for selecting physiological wearables from the Stress in Action Wearables Database (SiA-WD). Based on peer-reviewed research by Schoenmakers et al. [@schoenmakers2025siawd], the application enables users to explore and compare an extensive range of devices using two modules: a Product Filter for side-by-side comparisons and a Feature Filter including 43 filter options across six categories: SiA Expert Scores, General Device Information, Technical Specifications, Signals Measured, Data Access and Validation, and Reliability & Usability. Maintained by the Stress in Action consortium and supported by community contributions, the database will be continuously updated throughout the next decade. SiA-WD improves transparency, reproducibility, and efficiency in device selection and is freely accessible at https://wearables.stress-in-action.nl or can be run locally as a golem-based Shiny application.
 
 # Statement of Need
 
-Ambulatory wearable devices are widely used across psychology, medicine, and behavioural science to monitor physiological signals in daily life (@patel2012rehabilitation; @pevnicks2018update; @patel2021hospital). These devices allow continuous measurement of activity, heart rate, skin conductance, and related physiological processes (@majumder2017wearable; @peake2018critical). While wearable technology has advanced rapidly, researchers face growing challenges in selecting appropriate devices for stress research.
+Ambulatory wearable devices are widely used across psychology, medicine, and behavioural science to monitor physiological signals in daily life [@patel2012rehabilitation; @pevnicks2018update; @patel2021hospital]. These devices allow continuous measurement of activity, heart rate, skin conductance, and related physiological processes [@majumder2017wearable; @peake2018critical]. While wearable technology has advanced rapidly, researchers face growing challenges in selecting appropriate devices for stress research.
 
-Device selection often involves manually comparing technical specifications, recorded signals, and the scientific literature on validity, reliability, and usability—an effort-intensive and error-prone process (@giurgiu2022quality; @haddad2020ecological). Existing reviews and online listings are typically static, incomplete, outdated, or focused on consumer rather than scientific use cases (@iqbal2016review; @paredes2022chimera; @vijayan2021review; @lu2023remote).
+Device selection often involves manually comparing technical specifications, recorded signals, and the scientific literature on validity, reliability, and usability—an effort-intensive and error-prone process [@giurgiu2022quality; @haddad2020ecological]. Existing reviews and online listings are typically static, incomplete, outdated, or focused on consumer rather than scientific use cases [@iqbal2016review; @paredes2022chimera; @vijayan2021review; @lu2023remote].
 
-To address these limitations, Schoenmakers et al. developed the Stress in Action Wearables Database (SiA-WD) (@schoenmakers2025siawd): a curated, open-access resource designed to support evidence-based selection of physiological wearables in behavioural and stress research. The database is described in a peer-reviewed publication in *Behavior Research Methods* and is openly available via the Open Science Framework (https://osf.io/umgvp/). It includes detailed device metadata, systematic literature reviews, and expert scores covering more than 100 devices relevant to stress-related physiology. The database will be updated for at least a decade (2023–2033).
+To address these limitations, Schoenmakers et al. developed the Stress in Action Wearables Database (SiA-WD) [@schoenmakers2025siawd], a curated, open-access resource designed to support evidence-based selection of physiological wearables in behavioural and stress research. The database is described in a peer-reviewed publication in *Behavior Research Methods* and is openly available via the Open Science Framework (https://osf.io/umgvp/). It includes detailed device metadata, systematic literature reviews, and expert scores covering more than 100 devices relevant to stress-related physiology. The database will be updated for at least a decade (2023–2033).
 
 Delivered through an interactive R Shiny application, the tool allows users to explore, filter, and compare devices dynamically. Unlike static summaries, this interface supports flexible and reproducible workflows for study planning, cohort selection, and grant preparation. By reducing the effort required to make informed device choices, SiA-WD supports methodological rigor and transparency in stress-related physiological research.
 
@@ -50,23 +50,58 @@ Figure 1 – Overview of the Product Filter with output based on three selected 
 
 The Feature Filter provides a more exploratory approach. Researchers can filter the database using up to 41 variables, grouped into six thematic categories. The filters are modular and interactively update to ensure only valid combinations are selectable.
 
-**SiA Expert Score**  
-Long-term score and short-term score; exclusion of devices with missing scores.
+**SiA Expert Score** 
+- Long-term score  
+- Short-term score  
+- Exclusion of devices with missing scores  
 
-**General Device Information**  
-Manufacturer, model, release year, market status; intended use, cost, device type, and wear location.
+**General Device Information** 
+- Manufacturer  
+- Model  
+- Release year  
+- Market status  
+- Intended use  
+- Cost  
+- Device type  
+- Wear location  
 
-**Technical Specifications**  
-Water resistance, battery life, charging duration; bio-cueing and biofeedback support.
+**Technical Specifications** 
+- Water resistance  
+- Battery life  
+- Charging duration  
+- Bio-cueing support  
+- Biofeedback support  
 
-**Signals Measured**  
-Accelerometer, blood pressure, electrocardiography (ECG), electrodermal activity (EDA), electroencephalography (EEG), electromyography (EMG), global positioning system (GPS), gyroscope, impedance cardiography (ICG), photoplethysmography (PPG), respiration, skin temperature, and other measured signals.
+**Signals Measured** 
+- Accelerometer  
+- Blood pressure  
+- Electrocardiography (ECG)  
+- Electrodermal activity (EDA)  
+- Electroencephalography (EEG)  
+- Electromyography (EMG)  
+- Global positioning system (GPS)  
+- Gyroscope  
+- Impedance cardiography (ICG)  
+- Photoplethysmography (PPG)  
+- Respiration  
+- Skin temperature  
+- Other measured signals  
 
-**Data Access**  
-Raw data availability, internal and server-based storage, and storage capacity (MB and hours); general data protection regulation (GDPR) compliance, conformité européenne (CE) marking, and food and drug administration (FDA) clearance.
+**Data Access** 
+- Raw data availability  
+- Internal storage  
+- Server-based storage  
+- Storage capacity (MB)  
+- Storage duration (hours)  
+- General Data Protection Regulation (GDPR) compliance  
+- Conformité Européenne (CE) marking  
+- Food and Drug Administration (FDA) clearance  
 
-**Reliability, Validation & Usability**  
-Number of studies, validation levels, and usability ratings.
+**Reliability, Validation & Usability** 
+- Number of studies  
+- Validation levels  
+- Usability ratings  
+
 
 ![](figure_2.png)
 
@@ -88,11 +123,11 @@ Figure 3 – Submission form showing all mandatory fields completed, enabling su
 
 The SiA-WD Shiny application is deployed as a publicly accessible web-based tool at https://wearables.stress-in-action.nl. The application is hosted on a dedicated virtual machine maintained by Vrije Universiteit Amsterdam, running Linux Ubuntu 24.04 LTS with Shiny Server and Nginx.
 
-The application can also be run locally using the golem-based framework on which it is built. After installation from the public GitHub repository, the application can be launched within an R environment. Periodic updates are required to ensure access to the most recent database and application functionality.
+The application can also be run locally using the golem-based framework on which it is built. Periodic updates are required to ensure access to the most recent database and application functionality.
 
 # Data Sources and Dependencies
 
-The SiA-WD database is generated through a reproducible relational data pipeline implemented in a public GitHub repository (https://github.com/HugoGit39/sia.project.1.wd.data). The pipeline follows the methodological framework described in @schoenmakers2025siawd and applies reproducible research principles for relational database construction as outlined by @picardi2024reproducible.
+The SiA-WD database is generated through a reproducible relational data pipeline implemented in a public GitHub repository (https://github.com/HugoGit39/sia.project.1.wd.data). The pipeline follows the methodological framework described by Schoenmakers et al. [@schoenmakers2025siawd] and applies reproducible research principles for relational database construction [@picardi2024reproducible].
 
 ![](figure_4.png)
 
@@ -100,7 +135,7 @@ Figure 4 – Overview of the SiA-WD relational data pipeline: (1) source data fr
 
 In line with open science principles, curated exports of the SiA-WD database are publicly disseminated via the Open Science Framework and are available at https://osf.io/umgvp/.
 
-The accompanying Shiny application was built under R version 4.4.1 and relies on open-source R packages available via CRAN or GitHub, including shiny (@rstudio2012shiny), bs4Dash (@rinterface2018bs4dash), fresh (@dreamrs2019fresh), shinyWidgets (@dreamrs2017shinywidgets), shinycssloaders (@attali2017shinycssloaders), shinyjs (@attali2015shinyjs), sever (@coene2020sever), shinySearchbar (@norris2020shinysearchbar), dplyr (@tidyverse2012dplyr), lubridate (@tidyverse2009lubridate), rlang (@rlib2016rlang), scales (@rlib2010scales), reactable (@lin2019reactable), reactablefmtr (@cuilla2021reactablefmtr), htmltools (@rstudio2014htmltools), htmlwidgets (@vaidyanathan2014htmlwidgets), and writexl (@ooms2017writexl).
+The accompanying Shiny application was built under R version 4.4.1 and relies on open-source R packages available via CRAN or GitHub, including shiny [@rstudio2012shiny], bs4Dash [@rinterface2018bs4dash], fresh [@dreamrs2019fresh], shinyWidgets [@dreamrs2017shinywidgets], shinycssloaders [@attali2017shinycssloaders], shinyjs [@attali2015shinyjs], sever [@coene2020sever], shinySearchbar [@norris2020shinysearchbar], dplyr [@tidyverse2012dplyr], lubridate [@tidyverse2009lubridate], rlang [@rlib2016rlang], scales [@rlib2010scales], reactable [@lin2019reactable], reactablefmtr [@cuilla2021reactablefmtr], htmltools [@rstudio2014htmltools], htmlwidgets [@vaidyanathan2014htmlwidgets], and writexl [@ooms2017writexl].
 
 # Acknowledgements
 
