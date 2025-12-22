@@ -5,7 +5,7 @@
 ## About
 
 <img align="right"
-     src="https://raw.githubusercontent.com/HugoGit39/sia.project.1.wi.shiny/refs/heads/main/test/app/www/sia_hexsticker.png"
+     src="https://raw.githubusercontent.com/HugoGit39/siawd/refs/heads/master/inst/app/www/sia_hexsticker.png"
      width="200"
      alt="SIA Hex Sticker">
 
@@ -181,7 +181,6 @@ The Live version, R Shiny Server based source code, is publicly available in the
 - `{fresh}` – https://github.com/dreamRs/fresh  
 - `{lubridate}` – https://github.com/tidyverse/lubridate  
 - `{shinySearchbar}` – https://github.com/jsdnrs/shiny-searchbar  
-- `{emayili}` – https://github.com/datawookie/emayili  
 - `{shinyjs}` – https://github.com/daattali/shinyjs  
 - `{sever}` – https://github.com/JohnCoene/sever  
 - `{shinycssloaders}` – https://github.com/andrewsali/shinycssloaders  
