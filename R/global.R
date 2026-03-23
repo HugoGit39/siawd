@@ -15,37 +15,15 @@ readRenviron(".Renviron")
 
 # 2. Load data -----------------------------------------------------------
 
-df_sia_shiny_filters <- readRDS(
-  system.file("data", "df_shiny_sia_wd_filter.rds", package = "siawd")
-)
+df_sia_shiny_filters  <- readRDS(file.path(system.file("app/data", package = "siawd"), "df_shiny_sia_wd_filter.rds"))
+df_sia_shiny_info     <- readRDS(file.path(system.file("app/data", package = "siawd"), "df_shiny_sia_wd_info.rds"))
+df_shiny_rvu_detailed <- readRDS(file.path(system.file("app/data", package = "siawd"), "df_shiny_rvu_detailed.rds"))
+df_sia_osf            <- readRDS(file.path(system.file("app/data", package = "siawd"), "df_osf_sia_wd_shiny.rds"))
 
-df_sia_shiny_info <- readRDS(
-  system.file("data", "df_shiny_sia_wd_info.rds", package = "siawd")
-)
-
-df_shiny_rvu_detailed <- readRDS(
-  system.file("data", "df_shiny_rvu_detailed.rds", package = "siawd")
-)
-
-df_sia_osf <- readRDS(
-  system.file("data", "df_osf_sia_wd_shiny.rds", package = "siawd")
-)
-
-ui_constants <- readRDS(
-  system.file("data", "ui_constants.rds", package = "siawd")
-)
-
-glos <- readRDS(
-  system.file("data", "glos.rds", package = "siawd")
-)
-
-df_codebook <- readRDS(
-  system.file("data", "df_codebook.rds", package = "siawd")
-)
-
-updates <- readRDS(
-  system.file("data", "updates.rds", package = "siawd")
-)
+ui_constants <- readRDS(file.path(system.file("app/www", package = "siawd"), "ui_constants.rds"))
+glos         <- readRDS(file.path(system.file("app/www", package = "siawd"), "glos.rds"))
+df_codebook  <- readRDS(file.path(system.file("app/www", package = "siawd"), "df_codebook.rds"))
+updates      <- readRDS(file.path(system.file("app/www", package = "siawd"), "updates.rds"))
 
 # 3. Derived values -------------------------------------------------------
 
