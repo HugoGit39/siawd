@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.onclick = function () {
       const code = `# Install the SIA-WD golem package from GitHub
 install.packages("remotes")
-remotes::install_github("HugoGit39/siawd")
+remotes::install_github("stress-in-action/siawd")
 
 # Run the app
 siawd::run_app()`;
