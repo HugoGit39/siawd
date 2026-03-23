@@ -324,21 +324,44 @@ mod_prod_fil_server <- function(id, df_sia_shiny_filters) {
       filename = function() {
         paste0("sia_product_filter_data_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
       },
+
       content = function(file) {
+
         selected_ids <- selected_products()$device_id
+
         export_df <- df_sia_osf %>%
-          dplyr::filter(device_id %in% selected_ids) %>%
+          filter(device_id %in% selected_ids) %>%
           as.data.frame()
 
-        write_xlsx(
+        rvu_tabs <- df_shiny_rvu_detailed %>%
+          filter(device_id %in% selected_ids)
+
+        if (nrow(rvu_tabs) > 0) {
+
+          rvu_tabs <- rvu_tabs %>%
+            split(.$device_id)
+
+          names(rvu_tabs) <- substr(names(rvu_tabs), 1, 31)
+
+        } else {
+          rvu_tabs <- list()
+        }
+
+        excel_sheets <- c(
           list(
             "Selected Devices" = export_df,
-            "Glossary"         = df_codebook,
-            "LICENSE"        = df_license
+            "Glossary" = df_codebook,
+            "LICENSE"  = df_license
           ),
+          rvu_tabs
+        )
+
+        write_xlsx(
+          excel_sheets,
           path = file
         )
       },
+
       contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
   })

@@ -23,8 +23,16 @@ df_sia_shiny_info <- readRDS(
   system.file("data", "df_shiny_sia_wd_info.rds", package = "siawd")
 )
 
+df_shiny_rvu_detailed <- readRDS(
+  system.file("data", "df_shiny_rvu_detailed.rds", package = "siawd")
+)
+
 df_sia_osf <- readRDS(
   system.file("data", "df_osf_sia_wd_shiny.rds", package = "siawd")
+)
+
+ui_constants <- readRDS(
+  system.file("data", "ui_constants.rds", package = "siawd")
 )
 
 glos <- readRDS(

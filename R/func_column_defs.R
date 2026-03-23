@@ -15,7 +15,7 @@ func_bar_column_defs <- function(df, bar_vars, rename_map) {
     lapply(bar_vars, function(var) {
       colDef(
         name    = rename_map[[var]],
-        minWidth = 141,
+        minWidth = ui_constants$col_width_bar,
         cell    = data_bars(
           df,
           fill_color   = "#f15a29",
@@ -39,7 +39,7 @@ func_yn_column_defs <- function(yn_vars, rename_map) {
     lapply(yn_vars, function(var) {
       colDef(
         name    = rename_map[[var]],
-        minWidth = 141,
+        minWidth = ui_constants$col_width_bar,
         cell    = cells_yes_no
       )
     }),
@@ -57,7 +57,7 @@ func_numeric_column_defs <- function(df, numeric_vars, rename_map, numeric_var_r
       var_range <- numeric_var_ranges[[var]]
       colDef(
         name    = rename_map[[var]],
-        minWidth = 141,
+        minWidth = ui_constants$col_width_bar,
         style   = function(value) {
           if (!is.na(value)) {
             scaled_color <- map_to_colors(
@@ -81,7 +81,7 @@ func_char_column_defs <- function(vars, rename_map) {
     lapply(vars, function(var) {
       colDef(
         name    = rename_map[[var]],
-        minWidth = 141
+        minWidth = ui_constants$col_width_bar
       )
     }),
     vars
