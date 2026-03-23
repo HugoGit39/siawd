@@ -202,7 +202,7 @@ df_license <- data.frame(
 
 disconnected <- tagList(
   p(strong("Time Out!", style = "color: #1c75bc; font-size:30px")),
-  p(tags$img(src = "favicon.ico", height = 100, width = 100)),
+  p(tags$img(src = "www/favicon.ico", height = 100, width = 100)),
   p("You haven't been active for over 1 hour", br(),
     "or your system went into sleep mode.", br(),
     "To help", strong("Un-Stress", style = "color: #f15a29; font-size:18px"), "the server", br(),

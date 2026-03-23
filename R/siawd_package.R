@@ -28,4 +28,5 @@
 #' @importFrom sever useSever reload_button reload_link sever
 #' @importFrom shinySearchbar searchbar
 #' @importFrom scales rescale
+#' @importFrom purrr map
 "_PACKAGE"

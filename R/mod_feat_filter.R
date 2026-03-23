@@ -573,33 +573,6 @@ mod_feat_fil_server <- function(id, data) {
         paste0("sia_feature_filter_data_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
       },
       content = function(file) {
-        selected_ids <- filtered_data()$device_id
-
-        export_df <- df_sia_osf %>%
-          filter(device_id %in% selected_ids) %>%
-          as.data.frame()
-
-        if ("release_year" %in% names(export_df)) {
-          export_df$release_year <- format(export_df$release_year, "%Y")
-        }
-
-        write_xlsx(
-          list(
-            "Selected Devices" = export_df,
-            "Glossary"         = df_codebook,
-            "LICENSE"        = df_license
-          ),
-          path = file
-        )
-      },
-      contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
-
-    output$download_data <- downloadHandler(
-      filename = function() {
-        paste0("sia_feature_filter_data_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
-      },
-      content = function(file) {
 
         selected_ids <- filtered_data()$device_id
 
@@ -647,6 +620,48 @@ mod_feat_fil_server <- function(id, data) {
       contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 
+    output$download_filter_settings <- downloadHandler(
+      filename = function() {
+        paste0("sia_filter_settings_", format(Sys.Date(), "%Y%m%d"), ".xlsx")
+      },
+      content = function(file) {
+        settings <- list()
+
+        for (var in range_vars) {
+          range_vals <- as.integer(round(input[[var]]))
+          settings[[var]] <- paste(range_vals[1], range_vals[2], sep = ";")
+        }
+
+        for (var in checkbox_vars) {
+          settings[[var]] <- if (isTRUE(input[[var]])) "yes" else "yes;no"
+        }
+
+        for (var in select_inputs) {
+          settings[[var]] <- paste(input[[var]], collapse = ";")
+        }
+
+        settings[["release_year"]] <- paste(
+          format(input$release_year[1], "%Y"),
+          format(input$release_year[2], "%Y"),
+          sep = ";"
+        )
+
+        settings[["exclude_na_sia"]] <- if (isTRUE(input$exclude_na_sia)) "yes" else "yes;no"
+
+        df_settings <- data.frame(t(unlist(settings)), check.names = FALSE)
+        names(df_settings) <- names(settings)
+
+        write_xlsx(
+          list(
+            "Filter settings" = df_settings,
+            "Glossary" = df_codebook,
+            "LICENSE" = df_license
+          ),
+          path = file
+        )
+      },
+      contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
   })
 }
 

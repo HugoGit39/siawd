@@ -1,8 +1,7 @@
 Package: siawd
 Title: Stress in Action Wearables Database App
-Version: 1.0.0.
-Authors@R: 
-    person("Hugo", "Klarenberg", , "h.klarenberg@vu.nl", role = c("aut", "cre"))
+Version: 1.0.0
+Authors@R: person("Hugo", "Klarenberg", email = "h.klarenberg@vu.nl", role = c("aut", "cre"))
 Description: Shiny web app for the Stress in Action Wearables Database.
 License: CC BY-NC-ND 4.0 + file LICENSE
 Depends: 
@@ -15,6 +14,7 @@ Imports:
     golem,
     htmltools,
     lubridate,
+    purrr,
     reactable,
     reactablefmtr,
     rlang,
