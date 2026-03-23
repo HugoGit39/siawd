@@ -195,7 +195,7 @@ mod_about_ui <- function(id) {
                  HTML(paste0(
                    "# Install the SIA-WD golem package from GitHub<br/>",
                    "install.packages(&quot;remotes&quot;)<br/>",
-                   "remotes::install_github(&quot;HugoGit39/siawd&quot;)"
+                   "remotes::install_github(&quot;stress-in-action/siawd&quot;)"
                  ))
                ),
                p("Great! You are all set to run the SiA-WD app:"),
