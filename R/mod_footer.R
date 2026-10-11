@@ -33,7 +33,7 @@ mod_footer_ui <- function(id) {
           )
         ),
         a(
-          href = "https://github.com/HugoGit39/project.1.sia.wi.alt",
+          href = github_url("sia.project.1.wd.shiny"),
           target = "_blank",
           img(
             src = "www/github-sign_sia.png",
@@ -42,7 +42,7 @@ mod_footer_ui <- function(id) {
           )
         ),
         a(
-          href = "https://github.com/HugoGit39/siawd",
+          href = github_url("siawd"),
           target = "_blank",
           img(
             src = "www/sia_hexsticker_footer.png",

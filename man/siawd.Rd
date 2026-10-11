@@ -12,8 +12,8 @@ Stress in Action Wearables Database (SiA-WD).
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/HugoGit39/siawd}
-  \item Report bugs at \url{https://github.com/HugoGit39/siawd/issues}
+  \item \url{https://github.com/stress-in-action/siawd}
+  \item Report bugs at \url{https://github.com/stress-in-action/siawd/issues}
 }
 
 }

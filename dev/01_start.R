@@ -28,7 +28,7 @@ golem::fill_desc(
     email = "h.klarenberg@vu.nl",
     role = c("aut", "cre")
   ),
-  repo_url = "https://github.com/HugoGit39/siawd",
+  repo_url = "https://github.com/stress-in-action/siawd",
   pkg_version = "0.0.0.9000",
   set_options = TRUE
 )
@@ -65,7 +65,7 @@ golem::use_utils_server(with_test = TRUE)
 usethis::use_git()
 usethis::use_git_remote(
   name = "origin",
-  url = "https://github.com/HugoGit39/siawd"
+  url = "https://github.com/stress-in-action/siawd"
 )
 
 #Packages

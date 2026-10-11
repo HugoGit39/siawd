@@ -5,7 +5,7 @@
 ## About
 
 <img align="right"
-     src="https://raw.githubusercontent.com/HugoGit39/siawd/refs/heads/master/inst/app/www/sia_hexsticker.png"
+     src="inst/app/www/sia_hexsticker.png"
      width="200"
      alt="SIA Hex Sticker">
 
@@ -132,7 +132,7 @@
 ```r
 # Install the SiA-WD {golem} app from GitHub
 install.packages("remotes")
-remotes::install_github("HugoGit39/siawd")
+remotes::install_github("stress-in-action/siawd")
 
 # Launch the app
 siawd::run_app()
@@ -146,12 +146,12 @@ The App will open in your prefered browser.
 
 The Live version, R Shiny Server based source code, is publicly available in the following GitHub repository:
 
-**Source code:** [sia.project.1.wd.shiny](https://github.com/HugoGit39/sia.project.1.wd.shiny)
+**Source code:** [sia.project.1.wd.shiny](https://github.com/stress-in-action/sia.project.1.wd.shiny)
 
 ## Support
 
 <p align="justify">
-  If you encounter a bug, please <a href="https://github.com/HugoGit39/project.1.sia.wi/issues">submit an issue</a>.
+  If you encounter a bug, please <a href="https://github.com/stress-in-action/siawd/issues">submit an issue</a>.
 </p>
 
 <p align="justify">
