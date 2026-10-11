@@ -158,7 +158,14 @@ $(document).ready(function () {
              style='max-height:260px; overflow-y:auto; overflow-x:hidden;
                     text-align:left; line-height:1.3; width:500px; padding-right:6px;'>
 
-          This Shiny app and its included data are licensed under the
+          <b>App (software):</b><br>
+          The source code of this app is licensed under the <b>GNU General Public License v3.0 (GPL-3.0)</b>.<br>
+          <a href='https://www.gnu.org/licenses/gpl-3.0' target='_blank'>
+            https://www.gnu.org/licenses/gpl-3.0
+          </a><br><br>
+
+          <b>Data:</b><br>
+          The data in this Shiny app are licensed under the
           <b>Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)</b>.<br><br>
 
           <b>You are free to:</b><br>
@@ -171,7 +178,7 @@ $(document).ready(function () {
           &nbsp;&nbsp;&nbsp;&nbsp;"Stress in Action Wearables Database: A database of noninvasive wearable monitors<br>
           &nbsp;&nbsp;&nbsp;&nbsp;with systematic technical, reliability, validity, and usability information."<br>
           &nbsp;&nbsp;&nbsp;&nbsp;Behavior Research Methods (2025). doi:10.3758/s13428-025-02685-4<br>
-          &nbsp;&nbsp;2. Klarenberg H. et al. (2025). "Stress in Action Wearables Shiny App."<br><br>
+          &nbsp;&nbsp;2. Klarenberg H. et al. "Stress in Action Wearables Shiny App." <i>Manuscript in preparation, not yet published.</i><br><br>
 
           • <b>NonCommercial</b> — You may not use the data for commercial purposes, including selling, advertising, or incorporating it into paid products or services.<br><br>
 

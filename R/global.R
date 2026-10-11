@@ -147,7 +147,12 @@ rename_subm <- c(
 
 df_license <- data.frame(
   License = c(
-    "This Shiny app and its included data are licensed under the",
+    "App (software):",
+    "The source code of this app is licensed under the GNU General Public License v3.0 (GPL-3.0).",
+    "https://www.gnu.org/licenses/gpl-3.0",
+    "",
+    "Data:",
+    "The data in this Shiny app are licensed under the",
     "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).",
     "",
     "You are free to:",
@@ -160,7 +165,7 @@ df_license <- data.frame(
     "     \"Stress in Action Wearables Database: A database of noninvasive wearable monitors",
     "     with systematic technical, reliability, validity, and usability information.\"",
     "     Behavior Research Methods (2025). doi:10.3758/s13428-025-02685-4",
-    "  2. Klarenberg H. et al. (2025). \"Stress in Action Wearables Shiny App.\"",
+    "  2. Klarenberg H. et al. \"Stress in Action Wearables Shiny App.\" Manuscript in preparation, not yet published.",
     "",
     "- NonCommercial — You may not use the data for commercial purposes,",
     "  including selling, advertising, or incorporating it into paid products or services.",

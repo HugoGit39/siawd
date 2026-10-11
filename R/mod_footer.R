@@ -54,10 +54,17 @@ mod_footer_ui <- function(id) {
       right = tagList(
         span("© 2023–2033 Stress in Action |", style = "color:#1c75bc;"),
         a(
+          href   = "https://www.gnu.org/licenses/gpl-3.0",
+          target = "_blank",
+          style  = "color:#1c75bc; text-decoration:none;",
+          "Code: GPL-3.0"
+        ),
+        span(" | ", style = "color:#1c75bc;"),
+        a(
           href   = "https://creativecommons.org/licenses/by-nc-nd/4.0/",
           target = "_blank",
           style  = "color:#1c75bc; text-decoration:none;",
-          "Licensed under CC BY-NC-ND 4.0"
+          "Data: CC BY-NC-ND 4.0"
         )
       )
     )

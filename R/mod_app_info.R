@@ -32,7 +32,7 @@ mod_app_info_ui <- function(id) {
               inputId = "copy_citation_btn",
               label = "Copy Citations",
               icon = icon("copy"),
-              style = "background-color: #f15a29; color: white; margin-top: 5px;"
+              style = "background-color: #f15a29; color: white; margin-top: 5px; font-size: clamp(12px, 0.85vw, 18px); white-space: nowrap;"
             ),
             actionButton(
               inputId = ns("license_info"),
@@ -45,7 +45,7 @@ mod_app_info_ui <- function(id) {
               size    = "sm",
               flat    = TRUE,
               class   = "license-info-btn",
-              style   = "border-width: 2px;"
+              style   = "border-width: 2px; font-size: clamp(12px, 0.85vw, 18px); white-space: nowrap;"
             )
           )
         )
