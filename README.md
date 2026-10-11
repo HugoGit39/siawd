@@ -146,12 +146,12 @@ The App will open in your prefered browser.
 
 The Live version, R Shiny Server based source code, is publicly available in the following GitHub repository:
 
-**Source code:** [sia.project.1.wd.shiny](https://github.com/stress-in-action/sia.project.1.wd.shiny)
+**Source code:** [sia.project.1.wd.shiny](../../../sia.project.1.wd.shiny)
 
 ## Support
 
 <p align="justify">
-  If you encounter a bug, please <a href="https://github.com/stress-in-action/siawd/issues">submit an issue</a>.
+  If you encounter a bug, please <a href="../../issues">submit an issue</a>.
 </p>
 
 <p align="justify">

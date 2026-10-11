@@ -466,9 +466,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("copy_local_code_btn");
   if (btn) {
     btn.onclick = function () {
+      const owner = btn.dataset.owner || "stress-in-action";
       const code = `# Install the SIA-WD golem package from GitHub
 install.packages("remotes")
-remotes::install_github("stress-in-action/siawd")
+remotes::install_github("${owner}/siawd")
 
 # Run the app
 siawd::run_app()`;
