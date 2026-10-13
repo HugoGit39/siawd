@@ -1,0 +1,25 @@
+citHeader("To cite siawd in publications, please use both entries below. Cite the software when you use the app; cite the database paper when you publish or share any analysis that uses outputs from its filters.")
+
+bibentry(
+  bibtype  = "Manual",
+  title    = "siawd: Stress in Action Wearables Database App",
+  author   = person("Hugo", "Klarenberg", comment = c(ORCID = "0000-0002-1477-3675")),
+  year     = "2026",
+  note     = paste("R package version", meta$Version),
+  doi      = "10.5281/zenodo.23317426",
+  url      = "https://github.com/stress-in-action/siawd"
+)
+
+bibentry(
+  bibtype  = "Article",
+  title    = "Stress in action wearables database: A database of noninvasive wearable monitors with systematic technical, reliability, validity, and usability information",
+  author   = c(person("Myrte", "Schoenmakers"), person("Melisa", "Saygin"),
+               person("Magdalena", "Sikora"), person("Thomas", "Vaessen"),
+               person("Matthijs", "Noordzij"), person("Eco", "de Geus")),
+  journal  = "Behavior Research Methods",
+  year     = "2025",
+  volume   = "57",
+  number   = "6",
+  pages    = "171",
+  doi      = "10.3758/s13428-025-02685-4"
+)

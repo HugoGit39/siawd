@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: >-
+  If you use siawd, please cite this software. If you publish or share any
+  analysis that uses outputs from its filters, also cite the Stress in Action
+  Wearables Database paper listed under references.
+title: "siawd: Stress in Action Wearables Database App"
+type: software
+authors:
+  - family-names: Klarenberg
+    given-names: Hugo
+    orcid: "https://orcid.org/0000-0002-1477-3675"
+    email: h.klarenberg@vu.nl
+    affiliation: "Department of Biological Psychology, Vrije Universiteit Amsterdam"
+version: 1.1.2
+date-released: "2026-10-13"
+doi: 10.5281/zenodo.23317426
+license: GPL-3.0-only
+repository-code: "https://github.com/stress-in-action/siawd"
+url: "https://wearables.stress-in-action.nl"
+keywords:
+  - wearables
+  - stress
+  - ambulatory monitoring
+  - R
+  - Shiny
+references:
+  - type: article
+    title: >-
+      Stress in action wearables database: A database of noninvasive wearable
+      monitors with systematic technical, reliability, validity, and usability
+      information
+    authors:
+      - family-names: Schoenmakers
+        given-names: Myrte
+      - family-names: Saygin
+        given-names: Melisa
+      - family-names: Sikora
+        given-names: Magdalena
+      - family-names: Vaessen
+        given-names: Thomas
+      - family-names: Noordzij
+        given-names: Matthijs
+      - family-names: de Geus
+        given-names: Eco
+    journal: Behavior Research Methods
+    volume: 57
+    issue: 6
+    start: 171
+    year: 2025
+    doi: 10.3758/s13428-025-02685-4

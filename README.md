@@ -169,6 +169,8 @@ The Live version, R Shiny Server based source code, is publicly available in the
 
 <p align="justify"> This application is based on the following publication: <br> <strong> Schoenmakers M, Saygin M, Sikora M, Vaessen T, Noordzij M, de Geus E. <em>Stress in action wearables database: A database of noninvasive wearable monitors with systematic technical, reliability, validity, and usability information.</em> Behav Res Methods. 2025 May 13;57(6):171. </strong> <br> <a href="https://link.springer.com/article/10.3758/s13428-025-02685-4" target="_blank"> https://link.springer.com/article/10.3758/s13428-025-02685-4 </a> </p> <p align="justify"> Please cite this paper when publishing or sharing any analysis that uses outputs from the filters in this app. </p>
 
+<p align="justify"> Please also cite the app itself: <br> <strong> Klarenberg H. <em>siawd: Stress in Action Wearables Database App.</em> Zenodo. </strong> <br> <a href="https://doi.org/10.5281/zenodo.23317426" target="_blank"> https://doi.org/10.5281/zenodo.23317426 </a> </p> <p align="justify"> In R, <code>citation("siawd")</code> returns both entries. GitHub's "Cite this repository" button uses <code>CITATION.cff</code>. </p>
+
 ## Resources
 
 `Stress in Action` website: [https://stress-in-action.nl](https://stress-in-action.nl)
